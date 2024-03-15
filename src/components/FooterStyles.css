@@ -1,0 +1,22 @@
+
+/* 
+LIGHT-BLUE: #7CD0FA
+YELLOW: #FDC933
+DARK-BLUE: #002339
+*/
+
+
+.footer-btn {
+    border: 0px;
+    border-radius: 25px;
+    padding: 5px 15px 5px 15px;
+    background-color: #7CD0FA;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin: 10px;
+  }
+
+  .footer-btn:hover {
+    background-color: #FCD933;
+    color: #FFFFFF;
+  }

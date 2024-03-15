@@ -1,3 +1,14 @@
+@font-face {
+  font-family: "mont-light";
+  src: url("./fonts/mont/Mont-ExtraLightDEMO.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "mont-heavy";
+  src: url("./fonts/mont/Mont-HeavyDEMO.otf") format("opentype");
+}
+
+
 .App {
   text-align: center;
 }
@@ -36,4 +47,26 @@
   100% {
     transform: translateY(0px);
   }
+}
+
+h1.hero-header-text {
+  display: flex;
+  font-size: 48px;
+  margin: 25px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.navbar-dark {
+  background-color: #002339;
+  margin-bottom: 2rem;
+  min-height: 8rem;
+}
+
+.nav-link {
+  font-family: "mont-light";
 }
