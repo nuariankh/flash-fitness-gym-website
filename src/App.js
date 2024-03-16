@@ -3,36 +3,29 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './app/pages/HomePage';
+import WorkoutBuilderPage from './app/pages/WorkoutBuilderPage';
+import ClassesPage from './app/pages/ClassesPage';
+import TrainersPage from './app/pages/TrainersPage';
+import AboutPage from './app/pages/AboutPage';
 import './App.css';
 
 function App() {
   return (
     <div className='App'>
-      <Header />
-      <HomePage />
-      <Footer />
-      {/* <Routes>
-        <Route path="/Home" element={} />
-        <Route path="/WorkoutBuilder" element={} />
-        <Route path="/Classes" element={} />
-        <Route path="/Trainers" element={} />
-        <Route path="/About" element={} />
-      </Routes> */}
-      <main>
-
-      </main>
-    </div>
-    
-    // <div className='App'>
-    //   <Header />
-    //   <Routes>
-    //     <Route path='/' element={<HomePage />} />
-    //     <Route path='/' element={<WorkoutBuilderPage />} />
-    //     <Route path='/' element={<ClassesPage />} />
-    //     <Route path='/' element={<TrainersPage />} />
-    //     <Route path='/' element={<AboutPage />} />
-    //   </Routes>
-    // </div>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Header />
+        <div style={{ flex: '1' }}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/workout-builder" element={<WorkoutBuilderPage />} />
+            <Route path="/classes" element={<ClassesPage />} />
+            <Route path="/trainers" element={<TrainersPage />} />
+            <Route path="/about" element={<AboutPage />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+  </div>
   );
 }
 

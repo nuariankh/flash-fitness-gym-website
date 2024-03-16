@@ -30,19 +30,19 @@ const Header = () => {
             
             <Nav className="ms-auto" navbar>
                 <NavItem>
-                    <NavLink className="nav-link">Home</NavLink>
+                    <NavLink className="nav-link" to='/'>Home</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink className="nav-link">Workout Builder</NavLink>
+                    <NavLink className="nav-link" to='/workout-builder'>Workout Builder</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink className="nav-link">Classes</NavLink>
+                    <NavLink className="nav-link" to='/classes'>Classes</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink className="nav-link">Trainers</NavLink>
+                    <NavLink className="nav-link" to='/trainers'>Trainers</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink className="nav-link">About</NavLink>
+                    <NavLink className="nav-link" to='/about'>About</NavLink>
                 </NavItem>
             </Nav>
         </Navbar>

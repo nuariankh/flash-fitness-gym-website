@@ -25,7 +25,7 @@ const Footer = () => {
                         <button type='button' className='footer-btn'>SUBSCRIBE</button>
                     </Col>
                     <Col md='3'>
-                        <h3 style={{color: 'white'}}>Contact US</h3>
+                        <h3 style={{color: 'white'}}>Contact Us</h3>
                         <h5 style={{color: 'white'}}>555-726-8929</h5>
                     </Col>
                 </Row>
