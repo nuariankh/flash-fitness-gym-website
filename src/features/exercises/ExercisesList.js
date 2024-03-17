@@ -2,7 +2,7 @@ import { Col, Row, Container } from 'reactstrap';
 import ExerciseCard from './ExerciseCard';
 import { selectAllExercises } from './exercisesSlice';
 
-const ExercisesList = ( {handleExerciseClick} ) => {
+const ExercisesList = ({ handleExerciseClick }) => {
     const exercises = selectAllExercises();
 
     return (
@@ -10,7 +10,7 @@ const ExercisesList = ( {handleExerciseClick} ) => {
             {
                 exercises.map((exercise) => {
                     return (
-                        <ExerciseCard key={exercise.id} exercise={exercise} />
+                        <ExerciseCard key={exercise.id} exercise={exercise} handleExerciseClick={handleExerciseClick} />
                     );
                 })
             }

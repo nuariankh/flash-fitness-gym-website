@@ -8,7 +8,7 @@ import {
     NavbarToggler,
     Collapse
 } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import FlashFitnessLogo from '../app/assets/img/logo/flash-fitness-logo.png';
 
 /* 
@@ -24,8 +24,10 @@ const Header = () => {
     return (
         <Navbar dark sticky='top' expand='md' className="mb-0 m-0" style={{width: '100vw'}}>
             <NavbarBrand className="header-container">
-                <img className="d-inline-block align-top header-logo" src={FlashFitnessLogo} alt="Flash Fitness Logo" style={{width: "100px", height: "100px"}} />
-                <h1 class="hero-header-text" style={{color: "#7CD0FA", display: "inline-block"}}>Flash Fitness</h1>
+                <Link to='/'>
+                    <img className="d-inline-block align-top header-logo" src={FlashFitnessLogo} alt="Flash Fitness Logo" style={{width: "100px", height: "100px"}} />
+                    <h1 class="hero-header-text" style={{color: "#7CD0FA", display: "inline-block"}}>Flash Fitness</h1>
+                </Link>
             </NavbarBrand>
             
             <Nav className="ms-auto" navbar>
