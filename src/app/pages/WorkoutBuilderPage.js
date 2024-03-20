@@ -6,13 +6,22 @@ import ExerciseCard from "../../features/exercises/ExerciseCard";
 const WorkoutBuilderPage = () => {
     const [selectedExercises, setSelectedExercises] = useState([]);
 
+    const removeExercise = (exerciseToRemove) => {
+        setSelectedExercises([selectedExercises.filter(exercise => exercise !== exerciseToRemove)])
+        console.log(selectedExercises);
+    };
+
     const addSelectedExercise = (exercise) => {
         
         if (!selectedExercises.includes(exercise)) {
             setSelectedExercises([...selectedExercises, exercise]); //add exercise to selected exercises state array
+            console.log(selectedExercises);
+
 
         } else if (selectedExercises.includes(exercise)) {
-            alert('This exercise has already been added to your daily routine.');
+            removeExercise(exercise);
+            console.log(selectedExercises);
+
         }
 
 
