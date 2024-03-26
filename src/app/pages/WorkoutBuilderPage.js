@@ -1,31 +1,17 @@
 import { Container, Row, Col, Button } from "reactstrap";
 import ExercisesList from "../../features/exercises/ExercisesList";
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import ExerciseCard from "../../features/exercises/ExerciseCard";
 
 const WorkoutBuilderPage = () => {
-    const [selectedExercises, setSelectedExercises] = useState([]);
 
-    const removeExercise = (exerciseToRemove) => {
-        setSelectedExercises([selectedExercises.filter(exercise => exercise !== exerciseToRemove)])
-        console.log(selectedExercises);
-    };
+    const selectedExercises = useSelector((state) => state.exercises.selectedExercises); //select exercises from redux store
 
-    const addSelectedExercise = (exercise) => {
-        
-        if (!selectedExercises.includes(exercise)) {
-            setSelectedExercises([...selectedExercises, exercise]); //add exercise to selected exercises state array
-            console.log(selectedExercises);
-
-
-        } else if (selectedExercises.includes(exercise)) {
-            removeExercise(exercise);
-            console.log(selectedExercises);
-
-        }
-
-
-    };
+    
+    useEffect(() => {
+        console.log('Selected Exercises:', selectedExercises)
+    }, []);
 
     return (
         <Container>
@@ -33,16 +19,17 @@ const WorkoutBuilderPage = () => {
             <Row>
                 <Col style={{ border: '2px solid #002339', height: '80vh', overflowY: 'auto' }}>
                     <h4>Exercises List</h4>
-                    <ExercisesList handleExerciseClick={addSelectedExercise} />
+                    <ExercisesList />
                 </Col>
                 <Col style={{border: '2px solid #002339', height: '80vh', overflowY: 'auto' }}>
                     <h4>Daily Workout Schedule</h4>
+
                     {/*Render selected exericeses */}
                     {selectedExercises.map((exercise) => {
-                        return <ExerciseCard key={exercise.id} exercise={exercise} handleExerciseClick={addSelectedExercise}/>;
+                        return (<ExerciseCard exercise={exercise} key={exercise.id} isSelected={true} />);
                     })}
-                    <Button>Complete Day</Button>
                     
+                    <Button>Complete Day</Button>
                 </Col>
             </Row>
             <Row>
