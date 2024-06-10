@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "mont-light";
+  src: url("./fonts/mont/Mont-ExtraLightDEMO.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "mont-heavy";
+  src: url("./fonts/mont/Mont-HeavyDEMO.otf") format("opentype");
+}
+
+* {
+  font-family: 'mont-light';
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'mont-heavy';
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-float infinite 3s ease-in-out;
+  }
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: rgb(112, 76, 182);
+}
+
+@keyframes App-logo-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+h1.hero-header-text {
+  display: flex;
+  font-size: 48px;
+  margin: 25px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.navbar-dark {
+  background-color: #002339;
+  margin-bottom: 2rem;
+  min-height: 8rem;
+}
+
+.nav-link {
+  font-family: "mont-light";
+}

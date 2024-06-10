@@ -1,0 +1,312 @@
+/* @font-face {
+    font-family: "mont-light";
+    src: url("../../fonts/mont/Mont-ExtraLightDEMO.otf") format("opentype");
+}
+  
+@font-face {
+    font-family: "mont-heavy";
+    src: url("../../fonts/mont/Mont-HeavyDEMO.otf") format("opentype");
+} */
+
+/* 
+LIGHT-BLUE: #7CD0FA
+YELLOW: #FDC933
+DARK-BLUE: #002339
+*/
+
+/* ----- GENERAL STYLES ----- */
+
+.text-theme-light-blue {
+    color: #7CD0FA;
+}
+
+.text-theme-yellow {
+    color: #FDC933;
+}
+
+.text-theme-dark-blue {
+    color: #002339;
+}
+
+.yellow-btn {
+    border: 0px;
+    border-radius: 25px;
+    padding: 15px 25px 15px 25px;
+    background-color: #FDC933;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.yellow-btn:hover {
+    background-color: #002339;
+    color: #FFFFFF;
+}
+
+.light-blue-btn {
+    border: 0px;
+    border-radius: 25px;
+    padding: 15px 25px 15px 25px;
+    background-color: #7CD0FA;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.light-blue-btn:hover {
+    background-color: #002339;
+    color: #FFFFFF;
+}
+
+/*----- Home Page ----- */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+  
+.Container {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+  
+#hero-image {
+    background-image: url('../assets/img/yoga-stretching-photo-03.png');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+    
+#hero-image h1 {
+    font-size: 3rem;
+}
+    
+#hero-image p {
+    font-size: 1.5rem;
+}
+  
+#section-01 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #7CD0FA;
+    height: 600px;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+  
+#section-02 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #7CD0FA;
+    color: #002339;
+    font-size: 2rem;
+    word-wrap: break-word; 
+    text-align: center; 
+    height: 600px;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 50px;
+    }
+  
+#section-02 p {
+    max-width: 80%; /* Limit the width of text to prevent overflow */
+    margin: 0 auto; /* Center the text horizontally */
+}
+  
+#section-03 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #002339;
+    font-size: 2rem;
+    word-wrap: break-word; 
+    text-align: center; 
+    height: 600px;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 50px;
+}
+  
+#section-03 p {
+    max-width: 80%; /* Limit the width of text to prevent overflow */
+    margin: 0 auto; /* Center the text horizontally */
+}
+  
+#section-04 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #7CD0FA;
+    color: #002339;
+    font-size: 2rem;
+    word-wrap: break-word; 
+    text-align: center; 
+    height: 600px;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 50px;
+}
+  
+#section-04 p {
+    max-width: 80%; /* Limit the width of text to prevent overflow */
+    margin: 0 auto; /* Center the text horizontally */
+}
+
+
+
+/*----- WorkoutBuilder Page ----- */
+
+.theme-dark-blue {
+    background-color: #00233975;
+}
+
+.theme-yellow {
+    background-color: #FDC93375;
+}
+
+.theme-light-blue {
+    background-color: #7cd0fa75;
+}
+
+.dayOfTheWeek {
+    min-height: 100px;
+    min-width: 100px;
+}
+
+
+
+/*----- Trainers Page ----- */
+
+#trainers-hero-image {
+    background-image: url('../assets/img/personal-trainer-looking-at-notebook-with-client-01.png');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-size: 8rem;
+    font-weight: bold;
+}
+
+#trainers-section-01 {
+    text-align: center;
+    height: 600px;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.trainer-container {
+    display: flex;
+    padding: 50px;
+    justify-content: space-around;
+}
+
+.trainer-box {
+    background-color: #7CD0FA;
+    padding: 20px;
+    margin: 25px;
+    min-width: 300px;
+    min-height: 300px;
+    border-radius: 15%;
+}
+
+.trainer-box:hover {
+    background-color: #FDC933;
+}
+
+.trainer-image {
+    border-radius: 50%;
+    max-width: 200px;
+}
+
+@keyframes scale-trainer-photo {
+    from {
+        transform: scale(1, 1);
+    }
+    to {
+        transform: scale(2.2, 2.2);
+    }
+}
+
+.trainer-image:hover {
+    border-radius: 0%;
+    transform: scale(2.2, 2.2);
+}
+
+.trainer-box-text {
+    margin: 10px;
+    word-wrap: break-word;
+}
+
+#trainers-section-02 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(124, 208, 250, 0.467);
+    color: #FFFFFF;
+    font-size: 2rem;
+    text-align: center; 
+    height: 600px;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 50px;
+    background-image: linear-gradient(45deg, transparent, rgb(124, 208, 250, 0.50), rgb(253, 201, 51, 0.50)), url('../assets/img/personal-trainer-and-group-of-people-outside-01.png');
+    background-size: cover;
+    background-position: center top;
+}
+
+#trainers-section-03 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #002339;
+    font-size: 1.5rem;
+    word-wrap: break-word; 
+    text-align: center; 
+    height: 600px;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+#trainers-section-04 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #7CD0FA;
+    color: #002339;
+    font-size: 1.5rem;
+    word-wrap: break-word; 
+    text-align: center; 
+    height: 600px;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 50px;
+}

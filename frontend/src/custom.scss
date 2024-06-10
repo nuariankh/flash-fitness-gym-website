@@ -1,0 +1,12 @@
+@import "bootstrap/scss/bootstrap";
+
+// Override Bootstrap variables
+$navbar-dark-color: #002339;
+$navbar-dark-hover-color: darken($navbar-dark-color, 10%);
+$navbar-dark-active-color: darken($navbar-dark-color, 10%);
+
+// Navbar customization
+.navbar-dark {
+  background-color: $navbar-dark-color;
+  
+}

@@ -1,0 +1,128 @@
+
+/* 
+LIGHT-BLUE: #7CD0FA
+YELLOW: #FDC933
+DARK-BLUE: #002339
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.Container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.hero-image {
+    background-image: url('../assets/img/yoga-stretching-photo-02.png');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+  
+  .hero-image h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-image p {
+    font-size: 1.5rem;
+  }
+
+  #section-01 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #7CD0FA;
+    height: 600px;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
+
+  #section-02 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #7CD0FA;
+    color: #002339;
+    font-size: 2rem;
+    word-wrap: break-word; 
+    text-align: center; 
+    height: 600px;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 50px;
+  }
+
+  #section-02 p {
+    max-width: 80%; /* Limit the width of text to prevent overflow */
+    margin: 0 auto; /* Center the text horizontally */
+}
+
+#section-03 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #002339;
+  font-size: 2rem;
+  word-wrap: break-word; 
+  text-align: center; 
+  height: 600px;
+  width: 100vw;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+#section-03 p {
+  max-width: 80%; /* Limit the width of text to prevent overflow */
+  margin: 0 auto; /* Center the text horizontally */
+}
+
+#section-04 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #7CD0FA;
+  color: #002339;
+  font-size: 2rem;
+  word-wrap: break-word; 
+  text-align: center; 
+  height: 600px;
+  width: 100vw;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+#section-04 p {
+  max-width: 80%; /* Limit the width of text to prevent overflow */
+  margin: 0 auto; /* Center the text horizontally */
+}
+
+.yellow-btn {
+  border: 0px;
+  border-radius: 25px;
+  padding: 15px 25px 15px 25px;
+  background-color: #FDC933;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.yellow-btn:hover {
+  background-color: #002339;
+  color: #FFFFFF;
+}

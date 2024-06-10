@@ -1,0 +1,23 @@
+
+/* 
+LIGHT-BLUE: #7CD0FA
+YELLOW: #FDC933
+DARK-BLUE: #002339
+*/
+
+.theme-dark-blue {
+    background-color: #00233975;
+}
+
+.theme-yellow {
+    background-color: #FDC93375;
+}
+
+.theme-light-blue {
+    background-color: #7cd0fa75;
+}
+
+.dayOfTheWeek {
+    min-height: 100px;
+    min-width: 100px;
+}
