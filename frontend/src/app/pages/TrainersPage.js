@@ -6,15 +6,42 @@ import alexis_rodriguez_photo from '../assets/img/personal-trainers/alexis-rodri
 import jack_thompson_photo from '../assets/img/personal-trainers/jack-thompson-square.png';
 import sophia_chang_photo from '../assets/img/personal-trainers/sophia-chang-square.png';
 import max_patel_photo from '../assets/img/personal-trainers/max-patel-square.png';
+import { useState, useEffect } from "react";
 
 const TrainersPage = () => {
 
+    const trainersUrl = 'http://localhost:8000/trainers';
+
+    const [trainers, setTrainers] = useState([]);
+
+    useEffect(() => {
+        const fetchTrainers = async () => {
+            try {
+                console.log('Fetching trainers...')
+                const response = await fetch(trainersUrl);
+                if (!response.ok) {
+                    throw new Error('Something went wrong: ' + response.statusText);
+                }
+                const data = await response.json();
+                setTrainers(data);
+            } catch (err) {
+
+            }
+        } 
+        fetchTrainers();
+
+    }, [])
+    
+    useEffect(() => {
+        console.log('Trainers updated:', trainers);
+    }, [trainers]);
+
     return (
         <Container className='m-0 p-0'>
+            
             <div id='trainers-hero-image'>
                 <p>PERSONAL TRAINING</p>
             </div>
-
             <div id='trainers-section-01'>
 
                 <h1 className="text-theme-dark-blue m-5">Meet Our Trainers!</h1>
