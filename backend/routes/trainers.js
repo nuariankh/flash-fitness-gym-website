@@ -16,6 +16,7 @@ router.post('/', async (req, res) => {
     const trainer = new Trainer({
         firstname: req.body.firstname,
         lastname: req.body.lastname,
+        tagline: req.body.tagline,
         bio: req.body.bio,
         image: req.body.image
     });

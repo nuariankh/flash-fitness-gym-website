@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 
 const TrainersPage = () => {
 
-    const trainersUrl = 'http://localhost:8000/trainers';
+    const trainersUrl = 'http://192.168.86.78:8000/trainers';
 
     const [trainers, setTrainers] = useState([]);
 
@@ -43,34 +43,18 @@ const TrainersPage = () => {
                 <p>PERSONAL TRAINING</p>
             </div>
             <div id='trainers-section-01'>
-
                 <h1 className="text-theme-dark-blue m-5">Meet Our Trainers!</h1>
                 <div className="trainer-container">
-
-                    <div className="trainer-box">
-                        <img className="trainer-image" src={alexis_rodriguez_photo} alt="trainer image" />
-                        <h4 className="trainer-box-text">Alexis "Iron Will"</h4>
-                        <h4 className="trainer-box-text">Rodriguez</h4>
-                    </div>
-
-                    <div className="trainer-box">
-                        <img className="trainer-image" src={jack_thompson_photo} alt="trainer image" />
-                        <h4 className="trainer-box-text">Jack "The Beast"</h4>
-                        <h4 className="trainer-box-text">Thompson</h4>
-                    </div>
-
-                    <div className="trainer-box">
-                        <img className="trainer-image" src={sophia_chang_photo} alt="trainer image" />
-                        <h4 className="trainer-box-text">Sophia "The Energizer"</h4>
-                        <h4 className="trainer-box-text">Chang</h4>
-                    </div>
-
-                    <div className="trainer-box">
-                        <img className="trainer-image" src={max_patel_photo} alt="trainer image" />
-                        <h4 className="trainer-box-text">Max "The Mindful Muscle"</h4>
-                        <h4 className="trainer-box-text">Patel</h4>
-                    </div>
-
+                    { 
+                        trainers.map((trainer, index) => (
+                            <div className="trainer-box" key={index}>
+                            <img className="trainer-image" src={trainer.image} alt="trainer image" />
+                            <h4 className="trainer-box-text">{trainer.firstname}</h4>
+                            <h5 className="trainer-box-text">{"\"" + trainer.tagline + "\""}</h5>
+                            <h4 className="trainer-box-text">{trainer.lastname}</h4>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
 
