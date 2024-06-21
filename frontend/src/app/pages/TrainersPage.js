@@ -2,15 +2,11 @@ import { Container, Row, Col } from "reactstrap";
 import './pageStyles.css';
 import personalTrainingPhoto from '../assets/img/personal-trainer-looking-at-notebook-with-client-02.png';
 import trainerInFacilityPoolPhoto from '../assets/img/personal-trainer-in-pool-with-client-01.png';
-import alexis_rodriguez_photo from '../assets/img/personal-trainers/alexis-rodriguez-square.png';
-import jack_thompson_photo from '../assets/img/personal-trainers/jack-thompson-square.png';
-import sophia_chang_photo from '../assets/img/personal-trainers/sophia-chang-square.png';
-import max_patel_photo from '../assets/img/personal-trainers/max-patel-square.png';
 import { useState, useEffect } from "react";
 
 const TrainersPage = () => {
 
-    const trainersUrl = 'http://192.168.86.78:8000/trainers';
+    const trainersUrl = 'http://localhost:8000/trainers';
 
     const [trainers, setTrainers] = useState([]);
 
@@ -68,7 +64,7 @@ const TrainersPage = () => {
                     <Col className='m-0 p-0 d-flex justify-content-center align-items-center'>
                         <div>
                             <h1>Personal Training</h1>
-                            <p>
+                            <p className="text-trainers-page">
                                 At Flash Fitness Gym, we understand that achieving fitness goals requires personalized guidance and 
                                 support. That's why our personal training programs are designed to empower individuals on their 
                                 journey to better health and wellness. Our experienced trainers provide tailored workout plans, 
@@ -79,7 +75,7 @@ const TrainersPage = () => {
                         </div>
                     </Col>
                     <Col className='m-0 p-0'>
-                        <img src={personalTrainingPhoto} style={{width: '800px', height: '500px', borderRadius: '25px'}}/>
+                        <img src={personalTrainingPhoto} className="trainers-page-image"/>
                     </Col>
                 </Row>
             </div>
@@ -87,12 +83,12 @@ const TrainersPage = () => {
             <div id='trainers-section-04'>
                 <Row>
                     <Col className='m-0 p-0'>
-                        <img src={trainerInFacilityPoolPhoto} style={{width: '800px', height: '500px', borderRadius: '25px'}}/>
+                        <img src={trainerInFacilityPoolPhoto} className="trainers-page-image"/>
                     </Col>
                     <Col className='m-0 p-0 d-flex justify-content-center align-items-center'>
                         <div>
                             <h1>Facility</h1>
-                            <p>
+                            <p className="text-trainers-page">
                                 At Flash Fitness Gym, our state-of-the-art facility is the ultimate destination for personalized 
                                 training experiences. Boasting top-of-the-line equipment and modern amenities, our gym provides the 
                                 perfect environment for individuals to pursue their fitness goals with the guidance of our expert 

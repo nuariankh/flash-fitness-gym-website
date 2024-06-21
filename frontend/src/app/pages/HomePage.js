@@ -24,7 +24,7 @@ const HomePage = () => {
                 <div id='section-02'>
                     <Row>
                         <Col className='m-0 p-0'>
-                            <img src={peopleCelebratingPhoto} style={{width: '800px', height: '500px', borderRadius: '25px'}} alt='People celebrating' />
+                            <img src={peopleCelebratingPhoto} className='home-page-image' alt='People celebrating' />
                         </Col>
                         <Col className='m-0 p-0 d-flex justify-content-center align-items-center'>
                             <div>
@@ -50,7 +50,7 @@ const HomePage = () => {
                             </div>
                         </Col>
                         <Col className='m-0 p-0'>
-                            <img src={personalTrainingPhoto} style={{width: '800px', height: '500px', borderRadius: '25px'}} alt='Personal trainer speaking to client' />
+                            <img src={personalTrainingPhoto} className='home-page-image' alt='Personal trainer speaking to client' />
                         </Col>
                     </Row>
                 </div>
@@ -58,7 +58,7 @@ const HomePage = () => {
                 <div id='section-04'>
                     <Row>
                         <Col className='m-0 p-0'>
-                            <img src={facilityPhoto} style={{width: '800px', height: '500px', borderRadius: '25px'}} alt='a birds-eye-view of the gym facility' />
+                            <img src={facilityPhoto} className='home-page-image' alt='a birds-eye-view of the gym facility' />
                         </Col>
                         <Col className='m-0 p-0 d-flex justify-content-center align-items-center'>
                             <div>

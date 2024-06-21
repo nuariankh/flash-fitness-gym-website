@@ -64,12 +64,12 @@ body {
     margin: 0;
     padding: 0;
 }
-  
+
 .Container {
     margin: 0 !important;
     padding: 0 !important;
 }
-  
+
 #hero-image {
     background-image: url('../assets/img/yoga-stretching-photo-03.png');
     background-size: cover;
@@ -93,7 +93,13 @@ body {
 #hero-image p {
     font-size: 1.5rem;
 }
-  
+
+.home-page-image {
+    object-fit: cover;
+    width: 700px;
+    height: 500px;
+}
+
 #section-01 {
     display: flex;
     justify-content: center;
@@ -105,7 +111,7 @@ body {
     margin: 0;
     padding: 0;
 }
-  
+
 #section-02 {
     display: flex;
     justify-content: center;
@@ -113,7 +119,7 @@ body {
     flex-direction: column;
     background-color: #7CD0FA;
     color: #002339;
-    font-size: 2rem;
+    font-size: 1.5rem;
     word-wrap: break-word; 
     text-align: center; 
     height: 600px;
@@ -121,19 +127,19 @@ body {
     margin: 0 auto;
     padding: 50px;
     }
-  
+
 #section-02 p {
     max-width: 80%; /* Limit the width of text to prevent overflow */
     margin: 0 auto; /* Center the text horizontally */
 }
-  
+
 #section-03 {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     color: #002339;
-    font-size: 2rem;
+    font-size: 1.5rem;
     word-wrap: break-word; 
     text-align: center; 
     height: 600px;
@@ -141,12 +147,12 @@ body {
     margin: 0 auto;
     padding: 50px;
 }
-  
+
 #section-03 p {
     max-width: 80%; /* Limit the width of text to prevent overflow */
     margin: 0 auto; /* Center the text horizontally */
 }
-  
+
 #section-04 {
     display: flex;
     justify-content: center;
@@ -154,7 +160,7 @@ body {
     flex-direction: column;
     background-color: #7CD0FA;
     color: #002339;
-    font-size: 2rem;
+    font-size: 1.5rem;
     word-wrap: break-word; 
     text-align: center; 
     height: 600px;
@@ -162,7 +168,7 @@ body {
     margin: 0 auto;
     padding: 50px;
 }
-  
+
 #section-04 p {
     max-width: 80%; /* Limit the width of text to prevent overflow */
     margin: 0 auto; /* Center the text horizontally */
@@ -211,6 +217,12 @@ body {
     font-weight: bold;
 }
 
+.trainers-page-image {
+    object-fit: cover;
+    width: 500px;
+    height: 500px;
+}
+
 #trainers-section-01 {
     text-align: center;
     height: 600px;
@@ -232,6 +244,8 @@ body {
     min-width: 300px;
     min-height: 300px;
     border-radius: 15%;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
 }
 
 .trainer-box:hover {
@@ -241,20 +255,13 @@ body {
 .trainer-image {
     border-radius: 50%;
     max-width: 200px;
-}
-
-@keyframes scale-trainer-photo {
-    from {
-        transform: scale(1, 1);
-    }
-    to {
-        transform: scale(2.2, 2.2);
-    }
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
 }
 
 .trainer-image:hover {
-    border-radius: 0%;
-    transform: scale(2.2, 2.2);
+    border-radius: 25%;
+    transform: scale(1.5, 1.5);
 }
 
 .trainer-box-text {
@@ -286,7 +293,7 @@ body {
     align-items: center;
     flex-direction: column;
     color: #002339;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     word-wrap: break-word; 
     text-align: center; 
     height: 600px;
@@ -302,7 +309,7 @@ body {
     flex-direction: column;
     background-color: #7CD0FA;
     color: #002339;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     word-wrap: break-word; 
     text-align: center; 
     height: 600px;
@@ -310,3 +317,4 @@ body {
     margin: 0 auto;
     padding: 50px;
 }
+
