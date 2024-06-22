@@ -21,6 +21,7 @@ const usersRouter = require('./routes/users');
 const trainersRouter = require('./routes/trainers');
 const gymClassesRouter = require('./routes/gymClasses');
 
+
 var app = express();
 
 app.use(session({
