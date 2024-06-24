@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 const TrainersPage = () => {
 
-    const trainersUrl = 'http://localhost:8000/trainers';
+    const trainersUrl = 'http://localhost:8000/api/trainers';
 
     const [trainers, setTrainers] = useState([]);
 
