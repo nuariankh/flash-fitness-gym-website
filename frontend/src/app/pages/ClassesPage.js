@@ -22,7 +22,8 @@ const ClassesPage = () => {
                 <div className="classes-container">
                     <div className="class-box">
                         <h3>Title</h3>
-                        <p>lorum ipsum lorum ipsum lorum ipsum lorum ipsum lorum ipsum</p>
+                        <p className="classes-page-class-description">lorum ipsum lorum ipsum lorum ipsum lorum ipsum lorum ipsum</p>
+                        <p className="classes-page-class-days">Monday, Tuesday, Wednesday</p>
                     </div>
                     
                 </div>

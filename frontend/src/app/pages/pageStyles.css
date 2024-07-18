@@ -347,7 +347,7 @@ body {
 .class-box {
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    padding: 25px;
     margin: 50px;
     background-color: #a7a7a7;
     color: #3c3c3c;
@@ -357,6 +357,14 @@ body {
 
 .class-box:hover {
     background-color: #7CD0FA;
+}
+
+.classes-page-class-description {
+    font-size: 1em;
+}
+
+.classes-page-class-days {
+    font-size: 0.8em;
 }
 
 #classes-page-section-01 {
@@ -369,7 +377,7 @@ body {
     align-items: center;
     text-align: center;
     padding: 50px;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     background-color: #7CD0FA;
 }
 
@@ -398,20 +406,36 @@ body {
 }
 
 #about-page-section-01 {
+    height: 300px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7CD0FA;
+    padding: 50px;
+}
+
+.about-page-section-01-text {
+    width: 50%;
+}
+
+#about-page-section-02 {
     height: 600px;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 25px;
-    
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .about-page-section-01-box {
     width: 200px;
     height: 600px;
     text-wrap: wrap;
-    margin: 50px;
+    margin: 25px;
+    margin-bottom: 50px;
 
 }
 
@@ -420,11 +444,20 @@ body {
     height: auto;
 }
 
-#about-page-section-02 {
-    margin: 25px;
+#about-page-section-03 {
+    height: 300px;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     background-color: #7CD0FA;
+}
+
+.classes-page-section-03-text {
+    font-size: 1.5em;
+}
+
+.classes-page-section-03-text-container {
+    width: 50%;
 }
