@@ -36,7 +36,7 @@ const TrainersPage = () => {
         <Container className='m-0 p-0'>
             
             <div id='trainers-hero-image'>
-                <p>PERSONAL TRAINING</p>
+                <p>Personal Training</p>
             </div>
             <div id='trainers-section-01'>
                 <h1 className="text-theme-dark-blue m-5">Meet Our Trainers!</h1>

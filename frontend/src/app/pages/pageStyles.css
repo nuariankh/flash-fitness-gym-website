@@ -70,7 +70,7 @@ body {
     padding: 0 !important;
 }
 
-#hero-image {
+#home-page-hero-image {
     background-image: url('../assets/img/yoga-stretching-photo-03.png');
     background-size: cover;
     background-position: center;
@@ -100,7 +100,7 @@ body {
     height: 500px;
 }
 
-#section-01 {
+#home-page-section-01 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,7 +112,7 @@ body {
     padding: 0;
 }
 
-#section-02 {
+#home-page-section-02 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,12 +128,12 @@ body {
     padding: 50px;
     }
 
-#section-02 p {
+#home-page-section-02 p {
     max-width: 80%; /* Limit the width of text to prevent overflow */
     margin: 0 auto; /* Center the text horizontally */
 }
 
-#section-03 {
+#home-page-section-03 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,12 +148,12 @@ body {
     padding: 50px;
 }
 
-#section-03 p {
+#home-page-section-03 p {
     max-width: 80%; /* Limit the width of text to prevent overflow */
     margin: 0 auto; /* Center the text horizontally */
 }
 
-#section-04 {
+#home-page-section-04 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -169,7 +169,7 @@ body {
     padding: 50px;
 }
 
-#section-04 p {
+#home-page-section-04 p {
     max-width: 80%; /* Limit the width of text to prevent overflow */
     margin: 0 auto; /* Center the text horizontally */
 }
@@ -318,3 +318,113 @@ body {
     padding: 50px;
 }
 
+/*----- Classes Page ----- */
+
+#classes-page-hero-image {
+    margin: 0;
+    padding: 0;
+    background-image: url('../assets/img/gym-class-02.png');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.class-container {
+    display: flex;
+    padding: 50px;
+    margin: 0 auto;
+}
+
+.class-box {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    margin: 50px;
+    background-color: #a7a7a7;
+    color: #3c3c3c;
+    border-radius: 25px;
+    max-width: 400px;
+}
+
+.class-box:hover {
+    background-color: #7CD0FA;
+}
+
+#classes-page-section-01 {
+    height: 300px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    font-size: 1.5rem;
+    background-color: #7CD0FA;
+}
+
+#classes-page-section-02 {
+    margin: 25px;
+}
+
+/*----- About Page ----- */
+
+#about-page-hero-image {
+    margin: 0;
+    padding: 0;
+    background-image: url('../assets/img/members-outside-gym.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 8rem;
+    height: 600px;
+    width: 100vw;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+#about-page-section-01 {
+    height: 600px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+    
+}
+
+.about-page-section-01-box {
+    width: 200px;
+    height: 600px;
+    text-wrap: wrap;
+    margin: 50px;
+
+}
+
+.about-page-section-01-box-img {
+    width: 200px;
+    height: auto;
+}
+
+#about-page-section-02 {
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #7CD0FA;
+}

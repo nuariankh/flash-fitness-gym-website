@@ -9,19 +9,19 @@ const HomePage = () => {
     return (
         <Container className='m-0 p-0'>
             <Container className='m-0 p-0'>
-                <div id='hero-image'>
+                <div id='home-page-hero-image'>
                     <h1>Empower Your Body.</h1>
                     <h1>Elevate Your Life.</h1>
                     <h1>Flash Fitness.</h1>
                 </div>
 
-                <div id='section-01'>
+                <div id="home-page-section-01">
                     <h1>Join the flash Fitness Family Today and Unleash Your Potential!</h1>
                     <hr />
                     <button type='button' className='yellow-btn'>BECOME A MEMBER</button>
                 </div>
 
-                <div id='section-02'>
+                <div id="home-page-section-02">
                     <Row>
                         <Col className='m-0 p-0'>
                             <img src={peopleCelebratingPhoto} className='home-page-image' alt='People celebrating' />
@@ -38,7 +38,7 @@ const HomePage = () => {
                     </Row>
                 </div>
 
-                <div id='section-03'>
+                <div id="home-page-section-03">
                     <Row>
                         <Col className='m-0 p-0 d-flex justify-content-center align-items-center'>
                             <div>
@@ -55,7 +55,7 @@ const HomePage = () => {
                     </Row>
                 </div>
 
-                <div id='section-04'>
+                <div id="home-page-section-04">
                     <Row>
                         <Col className='m-0 p-0'>
                             <img src={facilityPhoto} className='home-page-image' alt='a birds-eye-view of the gym facility' />
