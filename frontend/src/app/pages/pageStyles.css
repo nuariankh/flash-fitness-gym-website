@@ -2,7 +2,7 @@
     font-family: "mont-light";
     src: url("../../fonts/mont/Mont-ExtraLightDEMO.otf") format("opentype");
 }
-  
+
 @font-face {
     font-family: "mont-heavy";
     src: url("../../fonts/mont/Mont-HeavyDEMO.otf") format("opentype");
@@ -60,10 +60,6 @@ DARK-BLUE: #002339
 
 /*----- Home Page ----- */
 
-body {
-    margin: 0;
-    padding: 0;
-}
 
 .Container {
     margin: 0 !important;
@@ -119,10 +115,10 @@ body {
     flex-direction: column;
     background-color: #7CD0FA;
     color: #002339;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     word-wrap: break-word; 
     text-align: center; 
-    height: 600px;
+    height: 25em;
     width: 100vw;
     margin: 0 auto;
     padding: 50px;
@@ -139,10 +135,10 @@ body {
     align-items: center;
     flex-direction: column;
     color: #002339;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     word-wrap: break-word; 
     text-align: center; 
-    height: 600px;
+    height: 25em;
     width: 100vw;
     margin: 0 auto;
     padding: 50px;
@@ -160,10 +156,10 @@ body {
     flex-direction: column;
     background-color: #7CD0FA;
     color: #002339;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     word-wrap: break-word; 
     text-align: center; 
-    height: 600px;
+    height: 25em;
     width: 100vw;
     margin: 0 auto;
     padding: 50px;
