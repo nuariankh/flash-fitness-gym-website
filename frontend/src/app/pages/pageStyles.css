@@ -338,21 +338,23 @@ body {
 }
 
 
-.class-container {
+.classes-container {
     display: flex;
     padding: 50px;
     margin: 0 auto;
+    width: 100vw;
+    flex-wrap: wrap;
 }
 
 .class-box {
     display: flex;
     flex-direction: column;
     padding: 25px;
-    margin: 50px;
+    margin: 25px;
     background-color: #a7a7a7;
     color: #3c3c3c;
     border-radius: 25px;
-    max-width: 400px;
+    width: 400px;
 }
 
 .class-box:hover {

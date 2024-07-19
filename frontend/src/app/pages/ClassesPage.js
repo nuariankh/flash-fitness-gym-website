@@ -1,6 +1,29 @@
+import { greenyellow } from "color-name";
+import { useState, useEffect } from "react";
 import { Container } from "reactstrap";
 
 const ClassesPage = () => {
+
+    const classesUrl = 'https://flash-fitness-gym-website.onrender.com/api/classes';
+
+    const [classes, setClasses] = useState([]);
+
+    useEffect(() => {
+        const fetchClasses = async () => {
+            try {
+                console.log('Fetching classes...');
+                const response = await fetch(classesUrl);
+                if (!response.ok) {
+                    throw new Error('Something went wrong: ' + response.statusText);
+                }
+                const data = await response.json();
+                setClasses(data);
+            } catch (err) {
+
+            }
+        }
+        fetchClasses();
+    });
 
     return (
         <Container className="m-0 p-0">
@@ -20,11 +43,16 @@ const ClassesPage = () => {
             <div id="classes-page-section-02">
                 <h1>Classes Offered</h1>
                 <div className="classes-container">
-                    <div className="class-box">
-                        <h3>Title</h3>
-                        <p className="classes-page-class-description">lorum ipsum lorum ipsum lorum ipsum lorum ipsum lorum ipsum</p>
-                        <p className="classes-page-class-days">Monday, Tuesday, Wednesday</p>
-                    </div>
+                    {
+                        classes.map((gymClass, index) => (
+                            <div className="class-box" key={index}>
+                                <h3>{gymClass.name}</h3>
+                                <p className="classes-page-class-description">{gymClass.description}</p>
+                                <p className="classes-page-class-days">{gymClass.offeredOn}</p>
+                            </div>
+                        ))
+                    }
+                    
                     
                 </div>
             </div>

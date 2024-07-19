@@ -15,6 +15,7 @@ router.post('/', async (req, res) => {
     const gymClass = new GymClass({
         name: req.body.name,
         instructor: req.body.instructor,
+        description: req.body.description,
         duration: req.body.duration,
         location: req.body.location,
         offeredOn: req.body.offeredOn
