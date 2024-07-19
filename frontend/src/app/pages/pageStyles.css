@@ -91,9 +91,9 @@ DARK-BLUE: #002339
 }
 
 .home-page-image {
-    object-fit: cover;
-    width: 700px;
-    height: 500px;
+    object-fit: contain;
+    width: 100%;
+    height: 80%;
 }
 
 #home-page-section-01 {
@@ -105,7 +105,7 @@ DARK-BLUE: #002339
     height: 600px;
     width: 100vw;
     margin: 0;
-    padding: 0;
+    padding: 25px;
 }
 
 #home-page-section-02 {
@@ -125,7 +125,7 @@ DARK-BLUE: #002339
     }
 
 #home-page-section-02 p {
-    max-width: 80%; /* Limit the width of text to prevent overflow */
+    max-width: 80%; /* Limit width of text to prevent overflow */
     margin: 0 auto; /* Center the text horizontally */
 }
 
@@ -145,7 +145,7 @@ DARK-BLUE: #002339
 }
 
 #home-page-section-03 p {
-    max-width: 80%; /* Limit the width of text to prevent overflow */
+    max-width: 80%; /* Limit width of text to prevent overflow */
     margin: 0 auto; /* Center the text horizontally */
 }
 
@@ -159,7 +159,7 @@ DARK-BLUE: #002339
     font-size: 1.5em;
     word-wrap: break-word; 
     text-align: center; 
-    height: 25em;
+    height: auto;
     width: 100vw;
     margin: 0 auto;
     padding: 50px;
@@ -214,24 +214,28 @@ DARK-BLUE: #002339
 }
 
 .trainers-page-image {
-    object-fit: cover;
-    width: 500px;
-    height: 500px;
+    object-fit: contain;
+    width: 100%;
+    height: 80%;
 }
 
 #trainers-section-01 {
     text-align: center;
-    height: 600px;
+    height: auto;
     width: 100vw;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .trainer-container {
     display: flex;
     padding: 50px;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
+
 
 .trainer-box {
     background-color: #7CD0FA;
@@ -247,6 +251,7 @@ DARK-BLUE: #002339
 .trainer-box:hover {
     background-color: #FDC933;
 }
+
 
 .trainer-image {
     border-radius: 50%;
@@ -272,7 +277,7 @@ DARK-BLUE: #002339
     flex-direction: column;
     background-color: rgba(124, 208, 250, 0.467);
     color: #FFFFFF;
-    font-size: 2rem;
+    font-size: 2em;
     text-align: center; 
     height: 600px;
     width: 100vw;
@@ -289,10 +294,10 @@ DARK-BLUE: #002339
     align-items: center;
     flex-direction: column;
     color: #002339;
-    font-size: 1.2rem;
+    font-size: 1.2em;
     word-wrap: break-word; 
     text-align: center; 
-    height: 600px;
+    height: auto;
     width: 100vw;
     margin: 0 auto;
     padding: 50px;
@@ -305,10 +310,10 @@ DARK-BLUE: #002339
     flex-direction: column;
     background-color: #7CD0FA;
     color: #002339;
-    font-size: 1.2rem;
+    font-size: 1.2em;
     word-wrap: break-word; 
     text-align: center; 
-    height: 600px;
+    height: auto;
     width: 100vw;
     margin: 0 auto;
     padding: 50px;
@@ -328,7 +333,7 @@ DARK-BLUE: #002339
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 8rem;
+    font-size: 8em;
     font-weight: bold;
     text-align: center;
 }
@@ -366,7 +371,7 @@ DARK-BLUE: #002339
 }
 
 #classes-page-section-01 {
-    height: 300px;
+    height: auto;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -404,7 +409,7 @@ DARK-BLUE: #002339
 }
 
 #about-page-section-01 {
-    height: 300px;
+    height: auto;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -414,11 +419,12 @@ DARK-BLUE: #002339
 }
 
 .about-page-section-01-text {
-    width: 50%;
+    width: 75%;
+    font-size: 1em;
 }
 
 #about-page-section-02 {
-    height: 600px;
+    height: auto;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -443,7 +449,7 @@ DARK-BLUE: #002339
 }
 
 #about-page-section-03 {
-    height: 300px;
+    height: auto;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -453,9 +459,10 @@ DARK-BLUE: #002339
 }
 
 .classes-page-section-03-text {
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .classes-page-section-03-text-container {
     width: 50%;
+    margin: 50px;
 }

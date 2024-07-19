@@ -23,7 +23,7 @@ const HomePage = () => {
 
                 <div id="home-page-section-02">
                     <Row>
-                        <Col className='m-0 p-0'>
+                        <Col className='m-0 p-0 d-flex justify-content-center align-items-center'>
                             <img src={peopleCelebratingPhoto} className='home-page-image' alt='People celebrating' />
                         </Col>
                         <Col className='m-0 p-0 d-flex justify-content-center align-items-center'>
@@ -49,7 +49,7 @@ const HomePage = () => {
                                 </p>
                             </div>
                         </Col>
-                        <Col className='m-0 p-0'>
+                        <Col className='m-0 p-0 d-flex justify-content-center align-items-center'>
                             <img src={personalTrainingPhoto} className='home-page-image' alt='Personal trainer speaking to client' />
                         </Col>
                     </Row>
@@ -57,7 +57,7 @@ const HomePage = () => {
 
                 <div id="home-page-section-04">
                     <Row>
-                        <Col className='m-0 p-0'>
+                        <Col className='m-0 p-0 d-flex justify-content-center align-items-center'>
                             <img src={facilityPhoto} className='home-page-image' alt='a birds-eye-view of the gym facility' />
                         </Col>
                         <Col className='m-0 p-0 d-flex justify-content-center align-items-center'>

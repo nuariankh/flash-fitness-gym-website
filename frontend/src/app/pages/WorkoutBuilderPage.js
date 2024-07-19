@@ -22,18 +22,6 @@ const WorkoutBuilderPage = () => {
     const sundayWorkout = useSelector((state) => state.exercises.dailyWorkout.sunday);
     const currentDay = useSelector((state) => state.exercises.days[state.exercises.currentDayIndex]);
 
-    const createCurrentDailyWorkout = (value) => {
-        switch (currentDay) {
-            case 'monday':
-                return mondayWorkout
-                break;
-            case 'tuesday':
-                return tuesdayWorkout
-                break;
-        }
-        
-    }
-
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
