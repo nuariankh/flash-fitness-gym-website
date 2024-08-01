@@ -1,11 +1,13 @@
 import { greenyellow } from "color-name";
 import { useState, useEffect } from "react";
 import { Container } from "reactstrap";
+import Loading from "../../components/Loading";
 
 const ClassesPage = () => {
 
     const classesUrl = 'https://flash-fitness-gym-website.onrender.com/api/classes';
 
+    const [isLoading, setIsLoading] = useState([]);
     const [classes, setClasses] = useState([]);
 
     useEffect(() => {
@@ -44,6 +46,12 @@ const ClassesPage = () => {
                 <h1>Classes Offered</h1>
                 <div className="classes-container">
                     {
+                    isLoading ?
+                    (
+                        <Loading />
+                    )
+                    :
+                    (
                         classes.map((gymClass, index) => (
                             <div className="class-box" key={index}>
                                 <h3>{gymClass.name}</h3>
@@ -51,6 +59,7 @@ const ClassesPage = () => {
                                 <p className="classes-page-class-days">{gymClass.offeredOn}</p>
                             </div>
                         ))
+                    )
                     }
                     
                     

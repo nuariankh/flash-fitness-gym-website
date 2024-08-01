@@ -345,6 +345,8 @@ DARK-BLUE: #002339
     margin: 0 auto;
     width: 100vw;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .class-box {
@@ -386,6 +388,7 @@ DARK-BLUE: #002339
 
 #classes-page-section-02 {
     margin: 25px;
+    text-align: center;
 }
 
 /*----- About Page ----- */

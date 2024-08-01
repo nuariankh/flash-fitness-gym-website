@@ -3,14 +3,17 @@ import './pageStyles.css';
 import personalTrainingPhoto from '../assets/img/personal-trainer-looking-at-notebook-with-client-02.png';
 import trainerInFacilityPoolPhoto from '../assets/img/personal-trainer-in-pool-with-client-01.png';
 import { useState, useEffect } from "react";
+import Loading from '../../components/Loading'
 
 const TrainersPage = () => {
 
-    const trainersUrl = 'https://flash-fitness-gym-website.onrender.com/api/trainers';
+    const trainersUrl = 'https://flash-fitness-gym-website.onrender.com/api/trainer';
 
+    const  [isLoading, setIsLoading] = useState(false);
     const [trainers, setTrainers] = useState([]);
 
     useEffect(() => {
+        setIsLoading(true); // Set loading status befor fetching
         const fetchTrainers = async () => {
             try {
                 console.log('Fetching trainers...')
@@ -20,6 +23,7 @@ const TrainersPage = () => {
                 }
                 const data = await response.json();
                 setTrainers(data);
+                setIsLoading(false); // Set loading to false once data is fetched
             } catch (err) {
 
             }
@@ -41,16 +45,23 @@ const TrainersPage = () => {
             <div id='trainers-section-01'>
                 <h1 className="text-theme-dark-blue m-5">Meet Our Trainers!</h1>
                 <div className="trainer-container">
-                    { 
-                        trainers.map((trainer, index) => (
+                    {
+                    isLoading ? 
+                        (
+                            <Loading />
+                        ) 
+                        : 
+                        (
+                            trainers.map((trainer, index) => (
                             <div className="trainer-box" key={index}>
                             <img className="trainer-image" src={trainer.image} alt="trainer image" />
                             <h4 className="trainer-box-text">{trainer.firstname}</h4>
                             <h5 className="trainer-box-text">{"\"" + trainer.tagline + "\""}</h5>
                             <h4 className="trainer-box-text">{trainer.lastname}</h4>
                             </div>
-                        ))
-                    }
+                            ))
+                        )
+                        }
                 </div>
             </div>
 
