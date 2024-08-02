@@ -7,7 +7,7 @@ import Loading from '../../components/Loading'
 
 const TrainersPage = () => {
 
-    const trainersUrl = 'https://flash-fitness-gym-website.onrender.com/api/trainer';
+    const trainersUrl = 'https://flash-fitness-gym-website.onrender.com/api/trainers';
 
     const  [isLoading, setIsLoading] = useState(false);
     const [trainers, setTrainers] = useState([]);
