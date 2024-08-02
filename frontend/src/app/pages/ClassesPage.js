@@ -19,7 +19,9 @@ const ClassesPage = () => {
                     throw new Error('Something went wrong: ' + response.statusText);
                 }
                 const data = await response.json();
+                console.log('Classes recieved');
                 setClasses(data);
+                setIsLoading(false)
             } catch (err) {
 
             }

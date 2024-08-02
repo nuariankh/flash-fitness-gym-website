@@ -16,12 +16,14 @@ const TrainersPage = () => {
         setIsLoading(true); // Set loading status befor fetching
         const fetchTrainers = async () => {
             try {
-                console.log('Fetching trainers...')
+                setIsLoading(true);
+                console.log('Fetching trainers...');
                 const response = await fetch(trainersUrl);
                 if (!response.ok) {
                     throw new Error('Something went wrong: ' + response.statusText);
                 }
                 const data = await response.json();
+                console.log('Trainers recieved');
                 setTrainers(data);
                 setIsLoading(false); // Set loading to false once data is fetched
             } catch (err) {
