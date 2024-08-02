@@ -45,7 +45,10 @@ const ClassesPage = () => {
                 </p>
             </div>
             <div id="classes-page-section-02">
-                <h1>Classes Offered</h1>
+                <div className="d-flex justify-content-center align-items-center">
+                    <h1>Classes Offered</h1>
+                </div>
+                
                 <div className="classes-container">
                     {
                     isLoading ?
