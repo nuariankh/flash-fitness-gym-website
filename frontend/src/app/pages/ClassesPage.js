@@ -61,7 +61,7 @@ const ClassesPage = () => {
                             <div className="class-box" key={index}>
                                 <h3>{gymClass.name}</h3>
                                 <p className="classes-page-class-description">{gymClass.description}</p>
-                                <p className="classes-page-class-days">{gymClass.offeredOn}</p>
+                                <p className="classes-page-class-days">{gymClass.offeredOn.join(", ")}</p>
                             </div>
                         ))
                     )
