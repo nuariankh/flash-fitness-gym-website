@@ -4,40 +4,15 @@ import { Container, Row, Col, Card, CardBody, CardTitle, CardImg, Button } from 
 import { addExercise, removeExercise, addSet, removeSet, addRep, removeRep } from './exercisesSlice';
 import './ExerciseCardStyles.css';
 
-const ExerciseCard = ( { exercise } ) => {
+const ExerciseCard = ( { exercise, onAdd, onRemove } ) => {
     const { id, name, image, targets } = exercise;
 
     const dispatch = useDispatch();
 
     const [selected, setSelected] = useState(false);
 
-    const sets = useSelector((state) => state.exercises.exercisesArray[id].sets);
-    const reps = useSelector((state) => state.exercises.exercisesArray[id].reps);
-    const allExercises = useSelector((state) => state.exercises.exercisesArray);
-    const selectedExercises = useSelector((state) => state.exercises.selectedExercises);
-    //const isSelected = selectedExercises.includes(exercise);
-
-    const selectExercise = () => {
-        console.log('selectedExercises: ', selectedExercises);
-        console.log('exercisesArray: ', allExercises);
-        if (selectedExercises && !selectedExercises.includes(exercise)) { // check if selectedExercises exists and then if it does NOT contain the current exercise
-            console.log(exercise.name, 'SELECTED');
-            dispatch(addExercise(exercise));
-        } else {
-            alert('This exercise already included.');
-        }
-
-    };
-
-    const deselectExercise = () => {
-        
-        if (selectedExercises && selectedExercises.includes(exercise)) { // check if selectedExercises exists and then if it DOES contain the current exercise
-            console.log(exercise.name, 'DESELECTED');
-            dispatch(removeExercise(exercise));
-        } else {
-            alert('This exercise is not in your routine yet.');
-        }
-    }
+    const [sets, setSets] = useState(0);
+    const [reps, setReps] = useState(0);
     
 
     return (
@@ -46,8 +21,8 @@ const ExerciseCard = ( { exercise } ) => {
                 <Col xs="5" className='d-flex justify-content-center align-items-center flex-column m-0 p-0'>
                     <img width="100%" src={image} alt={name} className='dumbbell-icon' />
                     <div>
-                        <button onClick={() => selectExercise()} className='operator-button'>Add</button>
-                        <button onClick={() => deselectExercise()} className='operator-button'>Remove</button>
+                        <button onClick={() => onAdd()} className='operator-button'>Add</button>
+                        <button onClick={() => onRemove()} className='operator-button'>Remove</button>
                     </div>
                 </Col>
                 <Col xs="7">

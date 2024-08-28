@@ -6,6 +6,7 @@ import ExerciseCard from "../../features/exercises/ExerciseCard";
 import { addExercisesToCurrentDay } from "../../features/exercises/exercisesSlice";
 import './pageStyles.css';
 import { EXERCISES } from "../data/EXERCISES";
+import { v4 as uuidv4 } from 'uuid';
 
 
 const WorkoutBuilderPage = () => {
@@ -25,11 +26,14 @@ const WorkoutBuilderPage = () => {
     });
 
     const addExercise = (exercise) => {
-        setSelectedExercises([...selectedExercises, { ...exercise }]);
+        setSelectedExercises([...selectedExercises, { ...exercise, id: uuidv4() }]);
+        console.log("Exercise Added: ", exercise);
+        console.log("Exercise Id: ", exercise.id);
+
     };
 
     const removeExercise = (exerciseId) => {
-        setSelectedExercises(selectedExercises.filter(ex => ex.id !== exerciseId));
+        setSelectedExercises(selectedExercises.filter(exercise => exercise.id !== exerciseId));
     };
 
     const addToCurrentDay = () => {
@@ -80,7 +84,7 @@ const WorkoutBuilderPage = () => {
                             />);
                     })}
                     
-                    <button onClick={() => addToCurrentDay} className="light-blue-btn">
+                    <button onClick={() => addToCurrentDay()} className="light-blue-btn">
                         Add Exercises to {currentDay}
                     </button>
                     
