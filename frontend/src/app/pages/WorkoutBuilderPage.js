@@ -5,22 +5,40 @@ import { useSelector, useDispatch } from "react-redux";
 import ExerciseCard from "../../features/exercises/ExerciseCard";
 import { addExercisesToCurrentDay } from "../../features/exercises/exercisesSlice";
 import './pageStyles.css';
+import { EXERCISES } from "../data/EXERCISES";
 
 
 const WorkoutBuilderPage = () => {
 
-    const dispatch = useDispatch();
+    const exercises = EXERCISES;
 
-    const selectedExercises = useSelector((state) => state.exercises.selectedExercises); //select exercises from redux store
-    
-    const mondayWorkout = useSelector((state) => state.exercises.dailyWorkout.monday);
-    const tuesdayWorkout = useSelector((state) => state.exercises.dailyWorkout.tuesday);
-    const wednesdayWorkout = useSelector((state) => state.exercises.dailyWorkout.wednesday);
-    const thursdayWorkout = useSelector((state) => state.exercises.dailyWorkout.thursday);
-    const fridayWorkout = useSelector((state) => state.exercises.dailyWorkout.friday);
-    const saturdayWorkout = useSelector((state) => state.exercises.dailyWorkout.saturday);
-    const sundayWorkout = useSelector((state) => state.exercises.dailyWorkout.sunday);
-    const currentDay = useSelector((state) => state.exercises.days[state.exercises.currentDayIndex]);
+    const [selectedExercises, setSelectedExercises] = useState([]);
+    const [currentDay, setCurrentDay] = useState('Monday');
+    const [weeklyWorkouts, setWeeklyWorkouts] = useState({
+        Monday: [],
+        Tuesday: [],
+        Wednesday: [],
+        Thursday: [],
+        Friday: [],
+        Saturday: [],
+        Sunday: []
+    });
+
+    const addExercise = (exercise) => {
+        setSelectedExercises([...selectedExercises, { ...exercise }]);
+    };
+
+    const removeExercise = (exerciseId) => {
+        setSelectedExercises(selectedExercises.filter(ex => ex.id !== exerciseId));
+    };
+
+    const addToCurrentDay = () => {
+        setWeeklyWorkouts({
+            ...weeklyWorkouts,
+            [currentDay]: [...weeklyWorkouts[currentDay], ...selectedExercises]
+        });
+        setSelectedExercises([]); // Clear the selected exercises after adding them to the day
+    };
 
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -38,108 +56,39 @@ const WorkoutBuilderPage = () => {
             <Row>
                 <Col className="theme-light-blue" style={{ border: '2px solid #002339', height: '80vh', overflowY: 'auto', padding: '50px' }}>
                     <h4>Exercises List</h4>
-                    <ExercisesList />
+                    {
+                        exercises.map((exercise) => {
+                            return (
+                                <ExerciseCard 
+                                    key={exercise.id} 
+                                    exercise={exercise} 
+                                    onAdd={() => addExercise(exercise)} 
+                                />
+                            );
+                        })
+                    }
                 </Col>
                 <Col className="theme-yellow" style={{ border: '2px solid #002339', height: '80vh', overflowY: 'auto', padding: '50px', marginLeft: '-1px' }}>
                     <h4>Daily Workout Schedule</h4>
 
                     {/*Render selected exericeses */}
                     {selectedExercises.map((exercise) => {
-                        return (<ExerciseCard exercise={exercise} key={exercise.id} />);
+                        return (<ExerciseCard 
+                                    key={exercise.id} 
+                                    exercise={exercise} 
+                                    onRemove={() => removeExercise(exercise.id)}  
+                            />);
                     })}
                     
-                    <button onClick={() => dispatch(addExercisesToCurrentDay(), console.log(selectedExercises))} className="light-blue-btn">Add Exercises to {capitalizeFirstLetter(currentDay)}</button>
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    <h1>Weekly View</h1>
-                    <Row style={{ border: '2px solid #002339' }}>
-                        <Col>
-                            <h6>Monday</h6>
-                            <Row>
-                                {mondayWorkout && mondayWorkout.map((exercise) => {
-                                    return (
-                                        <div key={exercise.id}>
-                                            <p>{exercise.sets + 'x' + exercise.reps + ' ' + exercise.name}</p>
-                                        </div>
-                                    );
-                                })}
-                            </Row>
-                        </Col>
-                        <Col>
-                            <h6>Tuesday</h6>
-                            <Row>
-                                {tuesdayWorkout && tuesdayWorkout.map((exercise) => {
-                                    return (
-                                        <div key={exercise.id}>
-                                            <p>{exercise.sets + 'x' + exercise.reps + ' ' + exercise.name}</p>
-                                        </div>
-                                    );
-                                })}
-                            </Row>
-                        </Col>
-                        <Col>
-                            <h6>Wednesday</h6>
-                            <Row>
-                                {wednesdayWorkout && wednesdayWorkout.map((exercise) => {
-                                    return (
-                                        <div key={exercise.id}>
-                                            <p>{exercise.sets + 'x' + exercise.reps + ' ' + exercise.name}</p>
-                                        </div>
-                                    );
-                                })}
-                            </Row>
-                        </Col>
-                        <Col>
-                            <h6>Thursday</h6>
-                            <Row>
-                                {thursdayWorkout && thursdayWorkout.map((exercise) => {
-                                    return (
-                                        <div key={exercise.id}>
-                                            <p>{exercise.sets + 'x' + exercise.reps + ' ' + exercise.name}</p>
-                                        </div>
-                                    );
-                                })}
-                            </Row>
-                        </Col>
-                        <Col>
-                            <h6>Friday</h6>
-                            <Row>
-                                {fridayWorkout && fridayWorkout.map((exercise) => {
-                                    return (
-                                        <div key={exercise.id}>
-                                            <p>{exercise.sets + 'x' + exercise.reps + ' ' + exercise.name}</p>
-                                        </div>
-                                    );
-                                })}
-                            </Row>
-                        </Col>
-                        <Col>
-                            <h6>Saturday</h6>
-                            <Row>
-                                {saturdayWorkout && saturdayWorkout.map((exercise) => {
-                                    return (
-                                        <div key={exercise.id}>
-                                            <p>{exercise.sets + 'x' + exercise.reps + ' ' + exercise.name}</p>
-                                        </div>
-                                    );
-                                })}
-                            </Row>
-                        </Col>
-                        <Col>
-                            <h6>Sunday</h6>
-                            <Row>
-                                {sundayWorkout && sundayWorkout.map((exercise) => {
-                                    return (
-                                        <div key={exercise.id}>
-                                            <p>{exercise.sets + 'x' + exercise.reps + ' ' + exercise.name}</p>
-                                        </div>
-                                    );
-                                })}
-                            </Row>
-                        </Col>
-                    </Row>
+                    <button onClick={() => addToCurrentDay} className="light-blue-btn">
+                        Add Exercises to {currentDay}
+                    </button>
+                    
+                    <select value={currentDay} onChange={(e) => setCurrentDay(e.target.value)}>
+                        {Object.keys(weeklyWorkouts).map(day => (
+                            <option key={day} value={day}>{day}</option>
+                        ))}
+                    </select>
                 </Col>
             </Row>
         </Container>

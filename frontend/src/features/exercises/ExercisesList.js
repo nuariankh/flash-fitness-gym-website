@@ -2,9 +2,10 @@ import { useSelector } from 'react-redux';
 import { Col, Row, Container } from 'reactstrap';
 import ExerciseCard from './ExerciseCard';
 import { selectAllExercises } from './exercisesSlice';
+import { EXERCISES } from '../../app/data/EXERCISES';
 
 const ExercisesList = ({ handleExerciseClick }) => {
-    const exercises = useSelector(selectAllExercises);
+    const exercises = EXERCISES;
 
     return (
         <Container>
