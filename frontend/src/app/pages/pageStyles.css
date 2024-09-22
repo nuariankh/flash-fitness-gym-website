@@ -187,11 +187,85 @@ DARK-BLUE: #002339
 }
 
 .dayOfTheWeek {
-    min-height: 100px;
-    min-width: 100px;
+    min-height: 200px;
+    min-width: 200px;
+    max-height: 200px;
+    max-width: 200px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #7cd0fa75;
+    border-color: #002339;
+    border-radius: 25px;
+    border-width: 5px;
+    overflow-y: auto;
 }
 
+.dayOfTheWeek::-webkit-scrollbar {
+    width: 10px;
+}
 
+.dayOfTheWeek::-webkit-scrollbar-thumb {
+    background-color: #00233925 ;
+    border-radius: 25px;
+}
+
+.dayOfTheWeek::-webkit-scrollbar-track-piece:start {
+    margin-top: 10px;
+}
+
+.dayOfTheWeek::-webkit-scrollbar-track-piece:end {
+    margin-bottom: 10px;
+}
+
+.smallDailyExerciseCard {
+    background-color: #00233925;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 25px;
+}
+
+.smallDailyExerciseCard p {
+    font-size: x-small;
+    margin: 0;
+    padding: 5px;
+}
+
+.smallDailyExerciseCardButton {
+    color: white;
+    background-color: #00233915;
+    border-width: 0;
+    width: 65px;
+    height: 20px;
+    text-align: center;
+    font-size: xx-small;
+    transition: 0.5s;
+    border-radius: 25px;
+}
+
+.smallDailyExerciseCardButton:hover {
+    background-color: #00233975;
+
+}
+
+.saveWorkoutButton {
+    background-color: #7CD0FA;
+    color: #FFFFFF;
+    margin: 25px;
+    padding: 0px;
+    border: 0px;
+    border-radius: 50px;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.saveWorkoutButton:hover {
+    background-color: #FDC933;
+}
 
 /*----- Trainers Page ----- */
 
