@@ -1,11 +1,8 @@
 import {
     Navbar,
     NavbarBrand,
-    Container,
     Nav,
     NavItem,
-    NavbarToggler,
-    Collapse
 } from 'reactstrap';
 import './HeaderStyles.css'
 import { NavLink, Link } from 'react-router-dom';
@@ -31,7 +28,7 @@ const Header = () => {
                 </Link>
             </NavbarBrand>
             
-            <Nav className="ms-auto" navbar>
+            <Nav className="ms-auto m-3" navbar>
                 <NavItem>
                     <NavLink className="nav-link" to='/'>Home</NavLink>
                 </NavItem>
