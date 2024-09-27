@@ -24,14 +24,14 @@ const ExerciseCard = ( { exercise, onAdd, onRemove, updateExerciseSetsReps } ) =
     return (
         <div className='exercise-card'>
             <Row>
-                <Col xs="5" className='d-flex justify-content-center align-items-center flex-column m-0 p-0'>
+                <Col className='d-flex justify-content-center align-items-center flex-column m-0 p-0'>
                     <img width="100%" src={image} alt={name} className='dumbbell-icon' />
                     <div>
                         <button onClick={() => onAdd()} className='operator-button'>Add</button>
                         <button onClick={() => onRemove(exercise.id)} className='operator-button'>Remove</button>
                     </div>
                 </Col>
-                <Col xs="7">
+                <Col>
                     <h4 className='exercise-card-title'>{localSets && localReps > 0 ? localSets + 'x' + localReps + ' ' + name : name}</h4>
                     <Container className='card-container'>
                         <Row>
