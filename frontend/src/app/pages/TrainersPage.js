@@ -88,7 +88,7 @@ const TrainersPage = () => {
                         </div>
                     </Col>
                     <Col className='m-0 p-0 d-flex justify-content-center align-items-center'>
-                        <img src={personalTrainingPhoto} className="trainers-page-image"/>
+                        <img src={personalTrainingPhoto} className="trainers-page-image" alt="Personal trainer with client in yoga studio"/>
                     </Col>
                 </Row>
             </div>
@@ -96,7 +96,7 @@ const TrainersPage = () => {
             <div id='trainers-section-04'>
                 <Row>
                     <Col className='m-0 p-0 d-flex justify-content-center align-items-center'>
-                        <img src={trainerInFacilityPoolPhoto} className="trainers-page-image"/>
+                        <img src={trainerInFacilityPoolPhoto} className="trainers-page-image" alt="Personal trainer and client in pool"/>
                     </Col>
                     <Col className='m-0 p-0 d-flex justify-content-center align-items-center'>
                         <div>

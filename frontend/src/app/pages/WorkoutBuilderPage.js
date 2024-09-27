@@ -1,11 +1,9 @@
-import { Container, Row, Col, Button } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import ExercisesList from "../../features/exercises/ExercisesList";
 import { useState, useEffect } from "react";
 import ExerciseCard from "../../features/exercises/ExerciseCard";
-import { addExercisesToCurrentDay } from "../../features/exercises/exercisesSlice";
 import './pageStyles.css';
 import { EXERCISES } from "../data/EXERCISES";
-import { v4 as uuidv4 } from 'uuid';
 import { saveAs } from 'file-saver';
 import { AlignmentType, Document, Packer, Paragraph, TextRun } from 'docx';
 

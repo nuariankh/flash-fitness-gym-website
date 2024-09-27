@@ -1,4 +1,3 @@
-import { greenyellow } from "color-name";
 import { useState, useEffect } from "react";
 import { Container } from "reactstrap";
 import Loading from "../../components/Loading";
