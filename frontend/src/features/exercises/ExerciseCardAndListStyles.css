@@ -5,13 +5,15 @@ DARK-BLUE: #002339
 */
 
 .exercise-card {
-    width: auto;
+    width: 100%;
+    min-width: 200px;
     background-color: #00233925;
     color: #FFFFFF;
     border: 4px solid #00233950;
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
+    transition: all 0.3s ease-in-out;
 }
 
 .exercise-card:hover {
@@ -19,6 +21,10 @@ DARK-BLUE: #002339
     background-color: #FDC93350;
     color: #002339;
 
+}
+
+.exercise-card-title {
+    font-size: 1em;
 }
 
 .exercise-title {
@@ -77,6 +83,11 @@ DARK-BLUE: #002339
 
 }
 
+.exercise-list-card-title {
+    font-size: 1em;
+    margin: 0px;
+}
+
 .exercise-list-title {
     background: -webkit-linear-gradient(#7DC0FA, #FDC933);
     -webkit-background-clip: text;
@@ -102,8 +113,8 @@ DARK-BLUE: #002339
     color: #002339;
 }
 
-.dumbbell-icon {
+.exercise-list-dumbbell-icon {
     border-radius: 50%;
-    width: 80%;
+    width: 4em;
     height: auto;
 }

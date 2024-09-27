@@ -16,11 +16,11 @@ const ExercisesList = ({ onAdd, onRemove }) => {
                         <div className='exercise-list-card' key={exercise.name}>
                             <Row>
                                 <Col xs="5" className='d-flex justify-content-center align-items-center flex-column m-0 p-0'>
-                                    <img width="100%" src={exercise.image} alt={exercise.name} className='dumbbell-icon' />
+                                    <img width="100%" src={exercise.image} alt={exercise.name} className='exercise-list-dumbbell-icon' />
                                     
                                 </Col>
                                 <Col xs="7">
-                                    <h4>{exercise.name}</h4>
+                                    <h4 className='exercise-list-card-title'>{exercise.name}</h4>
                                     <div>
                                         <button onClick={() => onAdd(exercise)} className='exercise-list-operator-button'>+</button>
                                     </div>

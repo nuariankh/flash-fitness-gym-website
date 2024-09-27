@@ -32,7 +32,7 @@ const ExerciseCard = ( { exercise, onAdd, onRemove, updateExerciseSetsReps } ) =
                     </div>
                 </Col>
                 <Col xs="7">
-                    <h4>{localSets && localReps > 0 ? localSets + 'x' + localReps + ' ' + name : name}</h4>
+                    <h4 className='exercise-card-title'>{localSets && localReps > 0 ? localSets + 'x' + localReps + ' ' + name : name}</h4>
                     <Container className='card-container'>
                         <Row>
                             <Col>

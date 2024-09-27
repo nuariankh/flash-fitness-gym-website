@@ -141,7 +141,7 @@ const WorkoutBuilderPage = () => {
         <Container>
             <h1 className="m-3">Workout Builder</h1>
             <Row>
-                <div className="d-flex flex-row justify-content-center align-items-center">
+                <div className=" weeklySchedule">
                     {Object.keys(weeklyWorkouts).map((dayOfTheWeek) => {
                         return (
                             <div className="dayOfTheWeek" key={dayOfTheWeek}>
@@ -167,9 +167,9 @@ const WorkoutBuilderPage = () => {
 
                 </div>
             </Row>
-            <Row>
-                <Col className="theme-light-blue mb-2" style={{ border: '2px solid #002339', height: '80vh', overflowY: 'auto', padding: '50px' }}>
-                    <h4>Exercises List</h4>
+            <Row className="mb-4">
+                <Col className="workoutBuilderColumnBlue">
+                    <h2>Exercises List</h2>
                     {
                         <ExercisesList
                             onAdd={addExercise}
@@ -177,8 +177,8 @@ const WorkoutBuilderPage = () => {
                         />
                     }
                 </Col>
-                <Col className="theme-yellow mb-2" style={{ border: '2px solid #002339', height: '80vh', overflowY: 'auto', padding: '50px', marginLeft: '-1px' }}>
-                    <h4>Daily Workout Schedule</h4>
+                <Col className="workoutBuilderColumnYellow">
+                    <h2>Daily Workout Schedule</h2>
                     <select value={currentDay} onChange={(e) => setCurrentDay(e.target.value)} className="m-3">
                         {Object.keys(weeklyWorkouts).map(day => (
                             <option key={day} value={day}>{day}</option>
@@ -196,7 +196,7 @@ const WorkoutBuilderPage = () => {
                             />);
                     })}
                     <div className="d-flex flex-column m-3">
-                        <button onClick={() => addToCurrentDay()} className="light-blue-btn m-3">
+                        <button onClick={() => addToCurrentDay()} className="light-blue-btn m-1">
                             Add Exercises to {currentDay}
                         </button>
                     </div>
