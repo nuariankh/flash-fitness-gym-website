@@ -56,7 +56,7 @@ const TrainersPage = () => {
                         (
                             trainers.map((trainer, index) => (
                             <div className="trainer-box" key={index}>
-                            <img className="trainer-image" src={trainer.image} alt="trainer image" />
+                            <img className="trainer-image" src={trainer.image} alt={`trainer: ${trainer.firstname}`} />
                             <h4 className="trainer-box-text">{trainer.firstname}</h4>
                             <h5 className="trainer-box-text">{"\"" + trainer.tagline + "\""}</h5>
                             <h4 className="trainer-box-text">{trainer.lastname}</h4>
