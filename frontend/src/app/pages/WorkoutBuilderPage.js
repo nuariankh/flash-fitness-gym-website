@@ -162,11 +162,18 @@ const WorkoutBuilderPage = () => {
                 </div>
             </Row>
             <Row>
-                <div>
+                
+                <div className="d-flex justify-content-center aligjn-items-center flex-column">
                     <button className="saveWorkoutButton" onClick={saveWorkoutToFile}>Save Workout</button>
-
+                    <select value={currentDay} onChange={(e) => setCurrentDay(e.target.value)} className="currentDaySelect">
+                        {Object.keys(weeklyWorkouts).map(day => (
+                        <option key={day} value={day}>{day}</option>
+                        ))}
+                </select>
                 </div>
+                
             </Row>
+
             <Row className="mb-4">
                 <Col className="workoutBuilderColumnBlue">
                     <h2>Exercises List</h2>
@@ -179,11 +186,6 @@ const WorkoutBuilderPage = () => {
                 </Col>
                 <Col className="workoutBuilderColumnYellow">
                     <h2>Daily Workout Schedule</h2>
-                    <select value={currentDay} onChange={(e) => setCurrentDay(e.target.value)} className="m-3">
-                        {Object.keys(weeklyWorkouts).map(day => (
-                            <option key={day} value={day}>{day}</option>
-                        ))}
-                    </select>
                     
                     {/*Render selected exericeses */}
                     {selectedExercises.map((exercise) => {
