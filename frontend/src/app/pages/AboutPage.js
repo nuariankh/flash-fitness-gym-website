@@ -1,6 +1,5 @@
 import { Container } from "reactstrap";
 import photoOfGymPeople01  from '../assets/img/member-selfie-01.png';
-import photoOfGymPeople02  from '../assets/img/member-selfie-02.png';
 
 
 const AboutPage = () => {
@@ -26,7 +25,7 @@ const AboutPage = () => {
 
             <div id="about-page-section-02">
                 <div className="about-page-section-01-box">
-                    <img className="about-page-section-01-box-img" src={photoOfGymPeople01}/>
+                    <img className="about-page-section-01-box-img" src={photoOfGymPeople01} alt="People at the gym"/>
                     <h3>Passion for Fitness</h3>
                     <p>
                         At Flash Fitness Gym, we're passionate about fitness, dedicated to 
@@ -35,7 +34,7 @@ const AboutPage = () => {
                     </p>
                 </div>
                 <div className="about-page-section-01-box">
-                    <img className="about-page-section-01-box-img" src={photoOfGymPeople01} />
+                    <img className="about-page-section-01-box-img" src={photoOfGymPeople01} alt="People at the gym" />
                     <h3>Community Commitment</h3>
                     <p>
                         We're more than a gym; we're a supportive community where 

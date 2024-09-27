@@ -1,7 +1,3 @@
-import { useSelector } from 'react-redux';
-import { Col, Row, Container } from 'reactstrap';
-import ExerciseCard from './ExerciseCard';
-import { selectAllExercises } from './exercisesSlice';
 import { EXERCISES } from '../../app/data/EXERCISES';
 import './ExerciseCardAndListStyles.css';
 
@@ -9,7 +5,7 @@ const ExercisesList = ({ onAdd, onRemove }) => {
     const exercises = EXERCISES;
 
     return (
-        <Container>
+        <div>
             {
                 exercises.map((exercise) => {
                     return (
@@ -27,7 +23,7 @@ const ExercisesList = ({ onAdd, onRemove }) => {
                 })
             }
             
-        </Container>
+        </div>
     );
 };
 
