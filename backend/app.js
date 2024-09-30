@@ -37,12 +37,12 @@ app.use(session({
 //API ROUTES
 // =====================================================
 const router = express.Router(); //get instance of express router
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.json({ message: 'hooray! Welcome to our api' });
 })
 
 //Register routes
-app.use('/', apiRouter);
+app.use('/api', apiRouter);
 
 //START SERVER
 app.listen(port);
