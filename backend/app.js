@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 })
 
 //Register routes
-app.use('/api', apiRouter);
+app.use('/', apiRouter);
 
 //START SERVER
 app.listen(port);
