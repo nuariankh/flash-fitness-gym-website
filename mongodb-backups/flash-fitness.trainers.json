@@ -1,0 +1,44 @@
+[{
+  "_id": {
+    "$oid": "6668f554981ba659c47101ab"
+  },
+  "firstname": "Alexis",
+  "tagline": "Iron Will",
+  "lastname": "Rodriguez",
+  "bio": "Alexis Rodriguez, known as 'Iron Will', inspires everyone with her unbreakable determination and strength.",
+  "image": "https://i.imgur.com/Cn97vfZ.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6668f5e9981ba659c47101ad"
+  },
+  "firstname": "Jack",
+  "tagline": "The Beast",
+  "lastname": "Thompson",
+  "bio": "Jack Thompson, 'The Beast', brings an unmatched intensity and ferocity to his training sessions.",
+  "image": "https://i.imgur.com/U61NlJT.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6668f5fc981ba659c47101af"
+  },
+  "firstname": "Sophia",
+  "tagline": "The Energizer",
+  "lastname": "Chang",
+  "bio": "Sophia Chang, also known as 'The Energizer', fills the gym with her endless energy and enthusiasm.",
+  "image": "https://i.imgur.com/x62fSZU.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6668f60c981ba659c47101b1"
+  },
+  "firstname": "Max",
+  "tagline": "The Mindful Muscle",
+  "lastname": "Patel",
+  "bio": "Max Patel, 'The Mindful Muscle', combines mindfulness and muscle training for a holistic fitness experience.",
+  "image": "https://i.imgur.com/whMr7Bt.png",
+  "__v": 0
+}]

@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "6699b0fc9452ce510ffb1110"
+  },
+  "name": "HIIT Blast",
+  "instructor": "Alex Johnson",
+  "description": "A high-intensity interval training class designed to burn calories and build strength.",
+  "duration": 60,
+  "location": "Room 1",
+  "offeredOn": [
+    "Monday",
+    "Wednesday",
+    "Friday"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6699b1449452ce510ffb81c2"
+  },
+  "name": "Yoga Flow",
+  "instructor": "Samantha Lee",
+  "description": "A calming yoga class that focuses on flexibility and mindfulness.",
+  "duration": 75,
+  "location": "Room 2",
+  "offeredOn": [
+    "Tuesday",
+    "Thursday",
+    "Saturday"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6699b1ac9452ce510ffc20a1"
+  },
+  "name": "Strength Training",
+  "instructor": "Mike Thompson",
+  "description": "A class focused on building muscle and increasing overall strength using various equipment.",
+  "duration": 45,
+  "location": "Gym Floor",
+  "offeredOn": [
+    "Monday",
+    "Wednesday",
+    "Friday"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6699b1c39452ce510ffc442a"
+  },
+  "name": "Pilates Core",
+  "instructor": "Rachel Adams",
+  "description": "A Pilates class that targets the core muscles for improved stability and posture.",
+  "duration": 50,
+  "location": "Room 3",
+  "offeredOn": [
+    "Tuesday",
+    "Thursday",
+    "Sunday"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6699b1d99452ce510ffc6471"
+  },
+  "name": "Cardio Kickboxing",
+  "instructor": "James Williams",
+  "description": "A fast-paced cardio workout combining kickboxing techniques with high-energy music.",
+  "duration": 60,
+  "location": "Room 4",
+  "offeredOn": [
+    "Monday",
+    "Thursday",
+    "Saturday"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6699b2119452ce510ffcbaf8"
+  },
+  "name": "Zumba Dance",
+  "instructor": "Lisa Brown",
+  "description": "A fun and energetic dance workout featuring Latin and international music.",
+  "duration": 55,
+  "location": "Room 5",
+  "offeredOn": [
+    "Wednesday",
+    "Friday",
+    "Sunday"
+  ]
+}]
