@@ -29,7 +29,7 @@ const ClassesPage = () => {
     });
 
     return (
-        <Container className="m-0 p-0">
+        <div className="m-0 p-0">
             <div id="classes-page-hero-image">
                 <p>Classes</p>
             </div>
@@ -69,7 +69,7 @@ const ClassesPage = () => {
                     
                 </div>
             </div>
-        </Container>
+        </div>
     );
 };
 
