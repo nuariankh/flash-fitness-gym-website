@@ -482,9 +482,8 @@ html, body {
 
 .classes-container {
     display: flex;
-    padding: 50px;
-    margin: 0 auto;
-    width: 100vw;
+    margin: 0;
+    width: fit-content;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -498,7 +497,11 @@ html, body {
     background-color: #a7a7a7;
     color: #3c3c3c;
     border-radius: 25px;
-    width: 400px;
+    flex: 1 1 25%;
+    min-height: 200px;
+    min-width: 300px;
+    height: 12em;
+    box-sizing: border-box;
 }
 
 .class-box:hover {
@@ -506,11 +509,11 @@ html, body {
 }
 
 .classes-page-class-description {
-    font-size: 1em;
+    font-size: 75%;
 }
 
 .classes-page-class-days {
-    font-size: 0.8em;
+    font-size: 75%;
 }
 
 #classes-page-section-01 {
