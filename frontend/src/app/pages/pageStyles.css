@@ -532,6 +532,12 @@ html, body {
 #classes-page-section-02 {
     margin: 25px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #classes-page-section-02 h1 {
