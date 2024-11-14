@@ -17,11 +17,22 @@ const UserSchema = new mongoose.Schema({
         unique: true,
         required: true
     },
+    email: {
+        type: String,
+        default: "",
+        required: true
+    },
+    membership: {
+        type: String,
+        default: "",
+        required: false
+    },
     admin: {
         type: Boolean,
         default: false,
         required: false
-    }
+    },
+
 });
 
 UserSchema.plugin(passportLocalMongoose);

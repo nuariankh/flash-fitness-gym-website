@@ -7,7 +7,7 @@ const User = require('../models/User');
 //sign up user
 router.post('/signup', async (req, res) => {
     try {
-        const { username, firstname, lastname, password, admin } = req.body;
+        const { username, firstname, lastname, password, email, membership, admin } = req.body;
         
         if (!username || !firstname || !lastname || !password) {
             return res.status(400).send({ error: 'All fields are required' });
@@ -16,6 +16,8 @@ router.post('/signup', async (req, res) => {
             username,
             firstname,
             lastname,
+            email,
+            membership,
             admin,
         });
         await User.register(newUser, password);
