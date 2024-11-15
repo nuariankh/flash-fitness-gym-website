@@ -41,8 +41,9 @@ const SignUp = () => {
             }
         } catch (err) {
             setMessage('An error occured while processing your request');
+        } finally {
+            setLoading(false)
         }
-    setLoading(false);
 };
 
     return (

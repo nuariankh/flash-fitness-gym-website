@@ -43,8 +43,10 @@ router.post('/login', (req, res) => {
             const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: 3600 });
             
             res.cookie('jwtToken', token, {
-                maxAge: 3600000,
-                sameSite: 'strict' // prevents browser from sending cookie with cross-site requests
+                maxAge: 3600000, // Cookie expiration time in milliseconds
+                sameSite: 'strict', // Ensures the cookie is only sent in a first-party context
+                httpOnly: false,   // Set to false for testing to make it accessible to JavaScript
+                secure: false      // Set to false if testing on localhost without HTTPS
             });
             
             return res.json({ success: true, token: token });

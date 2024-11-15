@@ -7,10 +7,9 @@ import WorkoutBuilderPage from './app/pages/WorkoutBuilderPage';
 import ClassesPage from './app/pages/ClassesPage';
 import TrainersPage from './app/pages/TrainersPage';
 import AboutPage from './app/pages/AboutPage';
-import Register from './components/SignUp';
-
-import './App.css';
 import SignUp from './components/SignUp';
+import Login from './components/Login';
+import './App.css';
 
 function App() {
   return (
@@ -25,6 +24,8 @@ function App() {
             <Route path="/trainers" element={<TrainersPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+
           </Routes>
         </div>
         <Footer />

@@ -7,6 +7,9 @@ import {
 import './HeaderStyles.css'
 import { NavLink, Link } from 'react-router-dom';
 import FlashFitnessLogo from '../app/assets/img/logo/flash-fitness-logo.png';
+import Cookies from 'js-cookie';
+import { jwtDecode } from 'jwt-decode';
+import { useState, useEffect } from 'react';
 
 /* 
 LIGHT-BLUE: #7CD0FA
@@ -15,6 +18,27 @@ DARK-BLUE: #002339
 */
 
 const Header = () => {
+
+    const [username, setUsername] = useState('');
+
+    useEffect(() => {
+        const token = Cookies.get('jwtToken');  // Or get from localStorage
+        console.log('Token:', token);  // Log the token to make sure it's a string
+        if (token) {
+            try {
+                // Decode the JWT token to extract the username
+                const decoded = jwtDecode(token);
+                console.log('Decoded Token:', decoded);
+                if (decoded && decoded.username) {
+                    setUsername(decoded.username);  // Set the username if it exists in decoded
+                } else {
+                    console.warn('Username not found in token payload');
+                }
+            } catch (error) {
+                console.error('Error decoding token:', error);
+            }
+        }
+    }, []);
 
     return (
         <Navbar dark sticky='top' expand='md' className="mb-0 m-0" style={{width: '100vw'}}>
@@ -43,6 +67,9 @@ const Header = () => {
                 </NavItem>
                 <NavItem>
                     <NavLink className="nav-link" to='/about'>About</NavLink>
+                </NavItem>
+                <NavItem>
+                    {username && <span>Welcome, {username}!</span>}
                 </NavItem>
             </Nav>
         </Navbar>
