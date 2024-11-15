@@ -6,9 +6,12 @@ const session = require('express-session');
 const cors = require('cors');
 require('dotenv').config();
 
+const allowedOrigins = ['http://localhost:3000', 'https://flashfitnessgym.netlify.app/'];
+
 const corsOptions = {
-        origin: "*",
-        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    origin: allowedOrigins,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
 }
 
 app.use(bodyParser.urlencoded({ extended: true }));
