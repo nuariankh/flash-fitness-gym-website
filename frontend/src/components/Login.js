@@ -1,5 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Cookies from 'js-cookie';
+import UserContext from "../UserContext";
+import { jwtDecode } from 'jwt-decode'; 
+
+
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -7,13 +11,15 @@ const Login = () => {
     const [message, setMessage] = useState('');
     const [loading, setLoading] = useState('');
 
+    const { login } = useContext(UserContext);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
         setMessage('');
 
         try {
-            const response = await fetch('https://flash-fitness-gym-website.onrender.com/api/users/login', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/users/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -24,14 +30,19 @@ const Login = () => {
 
             if (response.ok) {
                 const data = await response.json();
-                Cookies.set('AuthToken', data.token, {expiredIn: 1 }); //Cookie expires in 1 day
-                setMessage(data.message);
+                
+                if (data.success && typeof data.token === 'string') {
+                    login(data.token);
+
+                    setMessage('Login successful');
+                }
+                
             } else {
                 const errorData = await response.json();
                 setMessage(errorData.message || 'Login failed, please try again.');
             }
         } catch (error) {
-            setMessage('An error occured while processing your request: ' + error);
+            setMessage('An error occured while processing your request: ' + error.message);
         } finally {
             setLoading(false);
         }

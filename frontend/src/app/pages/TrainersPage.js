@@ -7,7 +7,7 @@ import Loading from '../../components/Loading'
 
 const TrainersPage = () => {
 
-    const trainersUrl = 'https://flash-fitness-gym-website.onrender.com/api/trainers';
+    const trainersUrl = `${process.env.REACT_APP_API_URL}/trainers`
 
     const  [isLoading, setIsLoading] = useState(false);
     const [trainers, setTrainers] = useState([]);
@@ -27,7 +27,9 @@ const TrainersPage = () => {
                 setTrainers(data);
                 setIsLoading(false); // Set loading to false once data is fetched
             } catch (err) {
-
+                console.log(err)
+            } finally {
+                setIsLoading(false);
             }
         } 
         fetchTrainers();

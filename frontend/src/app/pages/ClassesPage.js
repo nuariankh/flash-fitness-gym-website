@@ -4,7 +4,7 @@ import Loading from "../../components/Loading";
 
 const ClassesPage = () => {
 
-    const classesUrl = 'https://flash-fitness-gym-website.onrender.com/api/classes';
+    const classesUrl = `${process.env.REACT_APP_API_URL}/classes`
 
     const [isLoading, setIsLoading] = useState([]);
     const [classes, setClasses] = useState([]);
@@ -20,13 +20,14 @@ const ClassesPage = () => {
                 const data = await response.json();
                 console.log('Classes recieved');
                 setClasses(data);
-                setIsLoading(false)
             } catch (err) {
-
+                console.log(err);
+            } finally {
+                setIsLoading(false);
             }
         }
         fetchClasses();
-    });
+    }, []);
 
     return (
         <div className="m-0 p-0">

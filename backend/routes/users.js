@@ -40,8 +40,19 @@ router.post('/login', (req, res) => {
             if (err) {
                 return next(err);
             }
-            const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: 3600 });
+            const token = jwt.sign(
+                { 
+                    _id: user._id, 
+                    username: user.username,
+                    firstname: user.firstname,
+                    lastname: user.lastname,
+                    email: user.email, 
+                    membership: user.membership, 
+                    admin: user.admin 
+                }, process.env.JWT_SECRET, { expiresIn: '1h' });
             
+            console.log('Generated Token:', token);
+
             res.cookie('jwtToken', token, {
                 maxAge: 3600000, // Cookie expiration time in milliseconds
                 sameSite: 'strict', // Ensures the cookie is only sent in a first-party context

@@ -13,7 +13,7 @@ const SignUp = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await fetch('https://flash-fitness-gym-website.onrender.com/api/users/signup', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/users/signup`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

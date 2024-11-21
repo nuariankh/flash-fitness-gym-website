@@ -9,7 +9,8 @@ import { NavLink, Link } from 'react-router-dom';
 import FlashFitnessLogo from '../app/assets/img/logo/flash-fitness-logo.png';
 import Cookies from 'js-cookie';
 import { jwtDecode } from 'jwt-decode';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import UserContext from '../UserContext';
 
 /* 
 LIGHT-BLUE: #7CD0FA
@@ -19,26 +20,7 @@ DARK-BLUE: #002339
 
 const Header = () => {
 
-    const [username, setUsername] = useState('');
-
-    useEffect(() => {
-        const token = Cookies.get('jwtToken');  // Or get from localStorage
-        console.log('Token:', token);  // Log the token to make sure it's a string
-        if (token) {
-            try {
-                // Decode the JWT token to extract the username
-                const decoded = jwtDecode(token);
-                console.log('Decoded Token:', decoded);
-                if (decoded && decoded.username) {
-                    setUsername(decoded.username);  // Set the username if it exists in decoded
-                } else {
-                    console.warn('Username not found in token payload');
-                }
-            } catch (error) {
-                console.error('Error decoding token:', error);
-            }
-        }
-    }, []);
+    const {user, logout} = useContext(UserContext);
 
     return (
         <Navbar dark sticky='top' expand='md' className="mb-0 m-0" style={{width: '100vw'}}>
@@ -54,23 +36,45 @@ const Header = () => {
             
             <Nav className="ms-auto m-3" navbar>
                 <NavItem>
-                    <NavLink className="nav-link" to='/'>Home</NavLink>
+                    <NavLink className='nav-link' to='/'>Home</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink className="nav-link" to='/workout-builder'>Workout Builder</NavLink>
+                    <NavLink className='nav-link' to='/workout-builder'>Workout Builder</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink className="nav-link" to='/classes'>Classes</NavLink>
+                    <NavLink className='nav-link' to='/classes'>Classes</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink className="nav-link" to='/trainers'>Trainers</NavLink>
+                    <NavLink className='nav-link' to='/trainers'>Trainers</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink className="nav-link" to='/about'>About</NavLink>
+                    <NavLink className='nav-link' to='/about'>About</NavLink>
                 </NavItem>
-                <NavItem>
-                    {username && <span>Welcome, {username}!</span>}
-                </NavItem>
+
+                <div id='signup-login-box'>
+                    {!user ? (
+                        <>
+                            <NavItem>
+                                <NavLink className='nav-link' to='/signup'>Sign Up</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink className='nav-link' to='/login'>Login</NavLink>
+                            </NavItem>
+                        </>
+                    ) : (
+                        <NavItem>
+                            <NavLink className='nav-link' onClick={logout}>Logout</NavLink>
+                        </NavItem>
+                    )}
+                </div>
+                
+                <div>
+                    {user && user.username && user.firstname ? (
+                        <p>{user.firstname}!</p>
+                    ) : (
+                        <p>Welcome, Guest!</p>
+                    )}
+                </div>
             </Nav>
         </Navbar>
     )
