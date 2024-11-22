@@ -1,0 +1,60 @@
+
+/* 
+LIGHT-BLUE: #7CD0FA
+YELLOW: #FDC933
+DARK-BLUE: #002339
+*/
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.sign-up-login-form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+label {
+    width: 100px;
+    text-align: right;
+    margin: 1em;
+}
+
+input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-width: 12em;
+}
+
+select {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-width: 12em;
+}
+
+.sign-up-login-button {
+    background-color: #7CD0FA;
+    color: #FFF;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 10px;
+    border: 0px;
+}
+
+.sign-up-login-button:hover {
+    background-color: #FDC933;
+    color: #FFF;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 10px;
+    border: 0px;
+}
+
+.form-group-heading {
+    color: #FFF;
+}

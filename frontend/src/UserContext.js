@@ -10,13 +10,15 @@ export const UserProvider = ({ children }) => {
         const token = localStorage.getItem('jwtToken');
         if (token) {
             const decoded = jwtDecode(token);
+            console.log('decoded:', decoded);
             setUser({
                 username: decoded.username,
                 email: decoded.email,
                 firstname: decoded.firstname,
                 lastname: decoded.lastname,
                 membership: decoded.membership,
-                admin: decoded.admin
+                admin: decoded.admin,
+                id: decoded._id
             });
         }
     }, []);

@@ -6,7 +6,35 @@ DARK-BLUE: #002339
 */
 
 #signup-login-box {
-    background-color: #7CD0FA;
-    padding: 10px;
+    background-color: #7CD0FA25;
+    padding: 0.1em;
     margin: auto;
+    display: flex;
+    border-radius: 20px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#signup-login-box:hover {
+    background-color: #7CD0FA50;
+}
+
+#hello-user-box {
+    background-color: #FDC93325;
+    border-radius: 20px;
+    padding: 0.1em;
+    min-width: 1em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+#hello-user-box:hover {
+    background-color: #FDC93350;
+}
+
+#hello-user-box p {
+    color: #FFF;
+    margin: 0.5em;
 }

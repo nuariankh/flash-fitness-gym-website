@@ -11,6 +11,7 @@ import SignUp from './components/SignUp';
 import Login from './components/Login';
 import './App.css';
 import { UserProvider } from './UserContext';
+import AuthPage from './app/pages/AuthPage';
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                     <Route path="/classes" element={<ClassesPage />} />
                     <Route path="/trainers" element={<TrainersPage />} />
                     <Route path="/about" element={<AboutPage />} />
+                    <Route path='/auth-page' element={<AuthPage />} />
                     <Route path="/signup" element={<SignUp />} />
                     <Route path="/login" element={<Login />} />
                 </Routes>

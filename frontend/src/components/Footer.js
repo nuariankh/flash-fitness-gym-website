@@ -15,10 +15,10 @@ const Footer = () => {
 
     return (
         <footer style={{backgroundColor: '#002339', padding: '50px'}}>
-            <Container>
+            <div>
                 <Row>
                     <Col md='3' className='d-flex justify-content-center align-items-center'>
-                        <h2  style={{color: '#7CD0FA'}}>© FLASH FITNESS</h2>
+                        <h3  style={{color: '#7CD0FA'}}>© FLASH FITNESS</h3>
                     </Col>
                     <Col md='6'>
                         <input type="email" placeholder="E-MAIL" style={{border: '2px solid #7CD0FA'}}/>
@@ -26,10 +26,10 @@ const Footer = () => {
                     </Col>
                     <Col md='3'>
                         <h3 style={{color: 'white'}}>Contact Us</h3>
-                        <h5 style={{color: 'white'}}>555-726-8929</h5>
+                        <h3 style={{color: 'white'}}>555-726-8929</h3>
                     </Col>
                 </Row>
-            </Container>
+            </div>
         </footer>
     );
 };

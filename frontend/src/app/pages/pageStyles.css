@@ -622,3 +622,72 @@ html, body {
     width: 50%;
     margin: 50px;
 }
+
+/*----- Auth Page ----- */
+
+.auth-page-container {
+    position: relative; /* Make sure the container can be positioned */
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+    height: 800px;
+    overflow: hidden; /* Prevents overflow of blurred pseudo-element */
+}
+
+.auth-page-container::before {
+    content: "";
+    position: absolute; /* Position it absolutely within the container */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/img/yoga-stretching-photo-01.png');
+    background-position: center;
+    background-size: cover; /* Ensures the image covers the container */
+    filter: blur(8px); /* Applies the blur only to the background image */
+    z-index: -1; /* Ensures the pseudo element stays behind the content */
+}
+
+.auth-toggle-buttons-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.auth-toggle-buttons:hover {
+    background-color: #FDC933;
+}
+
+.auth-page-button {
+    background-color: #7CD0FA;
+    color: #FFF;
+    margin: 0.1em;
+    padding: 1em;
+    border-radius: 10px;
+    border: 0px;
+    width: 8em;
+}
+.auth-page-button-active {
+    background-color: #FDC933;
+    color: #FFF;
+    margin: 0.1em;
+    padding: 1em;
+    border-radius: 10px;
+    border: 0px;
+    width: 8em;
+}
+.auth-form-container {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #dddddd4d;
+}
+
+
+
+.auth-form-container {
+    margin-top: 20px;
+}
+

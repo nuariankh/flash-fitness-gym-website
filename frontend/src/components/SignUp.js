@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './SignUpLoginStyles.css';
 
 const SignUp = () => {
     const [firstName, setFirstName] = useState('');
@@ -6,6 +7,8 @@ const SignUp = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [membership, setMembership] = useState('');
+
     const [message, setMessage] = useState('');
     const [loading, setLoading] = useState(false);
 
@@ -24,6 +27,7 @@ const SignUp = () => {
                     username, 
                     email, 
                     password,
+                    membership
                 })
             });
 
@@ -35,6 +39,7 @@ const SignUp = () => {
                 setUsername('');
                 setEmail('');
                 setPassword('');
+                setMembership('');
             } else {
                 const errorData = response.json();
                 setMessage(errorData.message || 'Something went wrong :(');
@@ -48,56 +53,69 @@ const SignUp = () => {
 
     return (
         <div>
-            <h2>Register</h2>
+            <h2 className="form-group-heading">Sign Up</h2>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="sign-up-login-form-group">
                     <label>First Name:</label>
                     <input
                         type="text"
+                        placeholder="First Name"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
                         required
                     />
                 </div>
-                <div>
+                <div className="sign-up-login-form-group">
                     <label>Last Name:</label>
                     <input
                         type="text"
+                        placeholder="Last Name"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
                         required
                     />
                 </div>
-                <div>
+                <div className="sign-up-login-form-group">
                     <label>Username:</label>
                     <input
                         type="text"
+                        placeholder="Username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         required
                     />
                 </div>
-                <div>
+                <div className="sign-up-login-form-group">
                     <label>Email:</label>
                     <input
                         type="email"
+                        placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                 </div>
-                <div>
+                <div className="sign-up-login-form-group">
                     <label>Password:</label>
                     <input
                         type="password"
+                        placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
                 </div>
+                <div className="sign-up-login-form-group">
+                    <label>Membership:</label>
+                    <select name="membership">
+                        <option value="Basic">Basic Membership</option>
+                        <option value="Standard">Standard Membership</option>
+                        <option value="Premium">Premium Membership</option>
+                    </select>
+                </div>
                 <div>
-                    <button type="submit" disabled={loading}>
-                        {loading ? 'Registering...' : 'Register'}
+                    <button type="submit" disabled={loading} className="sign-up-login-button">
+                        {loading ? 'Signing Up...' : 'Sign Up'}
                     </button>
                 </div>
             </form>

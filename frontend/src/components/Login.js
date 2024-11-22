@@ -50,26 +50,34 @@ const Login = () => {
 
     return (
         <div>
+            <h2 className="form-group-heading">Sign In</h2>
             <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                />
-                <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-            />
-            <button type="submit">Login</button>
+                <div className="sign-up-login-form-group">
+                    <label>Username:</label>
+                    <input
+                        type="text"
+                        placeholder="Username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
+                    />
+                </div>
+                <div className="sign-up-login-form-group">
+                    <label>Password:</label>
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                </div>
+            <button type="submit" className="sign-up-login-button">Login</button>
             </form>
 
             {message && <p>{message}</p>}
         </div>
+        
     );
 };
 

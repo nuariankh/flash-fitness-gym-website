@@ -51,24 +51,21 @@ const Header = () => {
                     <NavLink className='nav-link' to='/about'>About</NavLink>
                 </NavItem>
 
-                <div id='signup-login-box'>
+                <div>
                     {!user ? (
-                        <>
+                        <div id='signup-login-box'>
                             <NavItem>
-                                <NavLink className='nav-link' to='/signup'>Sign Up</NavLink>
+                                <NavLink className='nav-link' to='/auth-page'>Login or Sign Up</NavLink>
                             </NavItem>
-                            <NavItem>
-                                <NavLink className='nav-link' to='/login'>Login</NavLink>
-                            </NavItem>
-                        </>
+                        </div>
                     ) : (
                         <NavItem>
-                            <NavLink className='nav-link' onClick={logout}>Logout</NavLink>
+                            <NavLink className='nav-link' to='/' onClick={logout}>Logout</NavLink>
                         </NavItem>
                     )}
                 </div>
                 
-                <div>
+                <div id='hello-user-box'>
                     {user && user.username && user.firstname ? (
                         <p>{user.firstname}!</p>
                     ) : (
@@ -78,6 +75,6 @@ const Header = () => {
             </Nav>
         </Navbar>
     )
-}
+};
 
 export default Header;
