@@ -6,7 +6,7 @@ const session = require('express-session');
 const cors = require('cors');
 require('dotenv').config();
 
-const allowedOrigins = ['http://localhost:3000', 'https://flashfitnessgym.netlify.app/'];
+const allowedOrigins = ['http://localhost:3000', 'https://flashfitnessgym.netlify.app'];
 
 const corsOptions = {
     origin: allowedOrigins,
