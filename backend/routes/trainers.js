@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
 
 router.delete('/', authenticate.verifyUser, authenticate.verifyAdmin, async (req, res) => {
     try {
-        await Trainer.deleteMany();
+        await Trainer.deleteMany({});
         res.status(200).json({ message: "All trainers have been successfully deleted" });
     } catch (err) {
         res.status(500).json({ error: err.message });

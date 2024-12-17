@@ -14,8 +14,8 @@ export const UserProvider = ({ children }) => {
             setUser({
                 username: decoded.username,
                 email: decoded.email,
-                firstname: decoded.firstname,
-                lastname: decoded.lastname,
+                firstName: decoded.firstName,
+                lastName: decoded.lastName,
                 membership: decoded.membership,
                 admin: decoded.admin,
                 id: decoded._id
@@ -29,8 +29,8 @@ export const UserProvider = ({ children }) => {
         setUser({
             username: decoded.username,
             email: decoded.email,
-            firstname: decoded.firstname,
-            lastname: decoded.lastname,
+            firstName: decoded.firstName,
+            lastName: decoded.lastName,
             membership: decoded.membership,
             admin: decoded.admin
         });

@@ -685,9 +685,21 @@ html, body {
     background-color: #dddddd4d;
 }
 
-
-
 .auth-form-container {
     margin-top: 20px;
 }
 
+/*----- User Dashboard Page ----- */
+
+.user-dashboard-page-container {
+
+}
+
+.user-dashboard-header {
+    background-color: #7CD0FA;
+    padding: 2em;
+}
+
+.user-dashboard-user-info-card {
+    
+}

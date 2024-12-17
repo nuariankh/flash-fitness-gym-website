@@ -12,6 +12,7 @@ import Login from './components/Login';
 import './App.css';
 import { UserProvider } from './UserContext';
 import AuthPage from './app/pages/AuthPage';
+import UserDashboard from './app/pages/UserDashboard';
 
 function App() {
     return (
@@ -29,6 +30,7 @@ function App() {
                     <Route path='/auth-page' element={<AuthPage />} />
                     <Route path="/signup" element={<SignUp />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/user-dashboard" element={<UserDashboard />} />
                 </Routes>
                 </div>
                 <Footer />

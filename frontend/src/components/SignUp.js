@@ -22,8 +22,8 @@ const SignUp = () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ 
-                    firstname: firstName, 
-                    lastname: lastName, 
+                    firstName, 
+                    lastName, 
                     username, 
                     email, 
                     password,
@@ -107,7 +107,11 @@ const SignUp = () => {
                 </div>
                 <div className="sign-up-login-form-group">
                     <label>Membership:</label>
-                    <select name="membership">
+                    <select 
+                        name="membership"
+                        value={membership}
+                        onChange={(e) => setMembership(e.target.value)}
+                    >
                         <option value="Basic">Basic Membership</option>
                         <option value="Standard">Standard Membership</option>
                         <option value="Premium">Premium Membership</option>

@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
 
 router.delete('/', async (req, res) => {
     try {
-        await GymClass.deleteMany();
+        await GymClass.deleteMany({});
         res.status(200).json({ message: "All classes have successfully been deleted" });
     } catch (err) {
         res.status(500).json({ error: err.message });

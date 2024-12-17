@@ -5,6 +5,10 @@ YELLOW: #FDC933
 DARK-BLUE: #002339
 */
 
+a, a:link, a:visited {
+    text-decoration: none; /* Removes the underline */
+}
+
 #signup-login-box {
     background-color: #7CD0FA25;
     padding: 0.1em;

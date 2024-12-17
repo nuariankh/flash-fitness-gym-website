@@ -3,19 +3,20 @@ const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const upload = require('../upload');
 
 //sign up user
 router.post('/signup', async (req, res) => {
     try {
-        const { username, firstname, lastname, password, email, membership, admin } = req.body;
+        const { username, firstName, lastName, password, email, membership, admin } = req.body;
         
-        if (!username || !firstname || !lastname || !password) {
+        if (!username || !firstName || !lastName || !password) {
             return res.status(400).send({ error: 'All fields are required' });
         }
         const newUser = new User({
             username,
-            firstname,
-            lastname,
+            firstName,
+            lastName,
             email,
             membership,
             admin,
@@ -44,8 +45,8 @@ router.post('/login', (req, res) => {
                 { 
                     _id: user._id, 
                     username: user.username,
-                    firstname: user.firstname,
-                    lastname: user.lastname,
+                    firstName: user.firstName,
+                    lastName: user.lastName,
                     email: user.email, 
                     membership: user.membership, 
                     admin: user.admin 
@@ -70,12 +71,54 @@ router.get('/logout', async (req, res, next) => {
     res.redirect('/');
 });
 
+router.get('/:id', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        res.json(user);
+    } catch (error) {
+        res.status(500).json({ message: 'Serve error' });
+    }
+});
 
-/* GET users listing. */
+router.post('/:id/profile-photo', upload.single('profilePhoto'), async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found ' });
+        }
+
+        //Store uploaded file's path in user's porfilePhoto field
+        user.profilePhoto = req.file.path;
+
+        //Save the updated user to the database
+        await User.save();
+
+        res.json({ message: 'Profile photo uploaded sccessfully', profilePhoto: user.profilePhoto });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
+// GET users listing
 router.get('/', async (req, res, next) => {
     const users = await User.find();
     res.setHeader('Content-Type', 'application/json');
     res.json(users)
+});
+
+// Delete all users
+router.delete('/',  async (req, res) => {
+    try {
+        await User.deleteMany({});
+        res.status(200).json({ message: "All users have been successfully deleted" });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
 module.exports = router;

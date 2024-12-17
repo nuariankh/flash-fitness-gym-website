@@ -64,14 +64,18 @@ const Header = () => {
                         </NavItem>
                     )}
                 </div>
+                <NavItem>
+                    <NavLink to='/user-dashboard'>
+                        <div id='hello-user-box'>
+                            {user && user.username && user.firstName ? (
+                                <p>{user.firstName}!</p>
+                            ) : (
+                                <p>Welcome, Guest!</p>
+                            )}
+                        </div>
+                    </NavLink>
+                </NavItem>
                 
-                <div id='hello-user-box'>
-                    {user && user.username && user.firstname ? (
-                        <p>{user.firstname}!</p>
-                    ) : (
-                        <p>Welcome, Guest!</p>
-                    )}
-                </div>
             </Nav>
         </Navbar>
     )
