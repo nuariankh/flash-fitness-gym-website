@@ -83,7 +83,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post('/:id/profile-photo', upload.single('profilePhoto'), async (req, res) => {
+router.post('/:id/profile-picture', upload.single('profilePicture'), async (req, res) => {
     try {
         const user = await User.findById(req.params.id);
 
@@ -92,10 +92,10 @@ router.post('/:id/profile-photo', upload.single('profilePhoto'), async (req, res
         }
 
         //Store uploaded file's path in user's porfilePhoto field
-        user.profilePhoto = req.file.path;
+        user.profilePicture = req.file.path;
 
         //Save the updated user to the database
-        await User.save();
+        await user.save();
 
         res.json({ message: 'Profile photo uploaded sccessfully', profilePhoto: user.profilePhoto });
     } catch (error) {
