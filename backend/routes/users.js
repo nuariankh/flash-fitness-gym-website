@@ -8,7 +8,7 @@ const upload = require('../upload');
 //sign up user
 router.post('/signup', async (req, res) => {
     try {
-        const { username, firstName, lastName, password, email, membership, admin } = req.body;
+        const { username, firstName, lastName, password, email, membership, profilePicture, admin } = req.body;
         
         if (!username || !firstName || !lastName || !password) {
             return res.status(400).send({ error: 'All fields are required' });
@@ -19,6 +19,7 @@ router.post('/signup', async (req, res) => {
             lastName,
             email,
             membership,
+            profilePicture,
             admin,
         });
         await User.register(newUser, password);
@@ -49,6 +50,7 @@ router.post('/login', (req, res) => {
                     lastName: user.lastName,
                     email: user.email, 
                     membership: user.membership, 
+                    profilePicture: user.profilePicture,
                     admin: user.admin 
                 }, process.env.JWT_SECRET, { expiresIn: '1h' });
             
@@ -77,9 +79,30 @@ router.get('/:id', async (req, res) => {
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
+        res.setHeader('Content-Type', 'application/json');
         res.json(user);
     } catch (error) {
-        res.status(500).json({ message: 'Serve error' });
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
+router.get('/:id/profile-picture', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Return the user's profile picture path
+        if (!user.profilePicture) {
+            return res.status(404).json({ message: 'Profile picture not found' });
+        }
+
+        res.json({ profilePicture: user.profilePicture });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
     }
 });
 
@@ -97,7 +120,7 @@ router.post('/:id/profile-picture', upload.single('profilePicture'), async (req,
         //Save the updated user to the database
         await user.save();
 
-        res.json({ message: 'Profile photo uploaded sccessfully', profilePhoto: user.profilePhoto });
+        res.json({ message: 'Profile picture uploaded sccessfully', profilePicture: user.profilePicture });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Server error' });

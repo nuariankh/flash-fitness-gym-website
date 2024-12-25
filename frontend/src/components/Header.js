@@ -21,6 +21,29 @@ DARK-BLUE: #002339
 const Header = () => {
 
     const {user, logout} = useContext(UserContext);
+    const [profilePicture, setProfilePicture] = useState(null);
+
+    console.log(user);
+
+    useEffect(() => {
+        const fetchProfilePicture = async () => {
+            if (user && user.id) {
+                try {
+                    const response = await fetch(`http://localhost:8000/api/users/${user.id}/profile-picture`);
+                    const data = response.json();
+                    if (response.ok && data.profilePicure) {
+                        setProfilePicture(data.profilePicture);
+                    } else {
+                        console.error(data);
+                    }
+                } catch (error) {
+                    console.error('Error fetching profile picture: ', error)
+                }
+            }
+        };
+
+        fetchProfilePicture();
+    }, [user]);
 
     return (
         <Navbar dark sticky='top' expand='md' className="mb-0 m-0" style={{width: '100vw'}}>
@@ -68,7 +91,14 @@ const Header = () => {
                     <NavLink to='/user-dashboard'>
                         <div id='hello-user-box'>
                             {user && user.username && user.firstName ? (
-                                <p>{user.firstName}!</p>
+                                <div>
+                                    <img 
+                                        src={`${process.env.REACT_APP_API_URL}/users/${user.id}/${user.profilePicture}`}
+                                        alt='User profile picture'
+                                        className='profile-picture'
+                                    />
+                                    <p>{user.firstName}!</p>
+                                </div>
                             ) : (
                                 <p>Welcome, Guest!</p>
                             )}

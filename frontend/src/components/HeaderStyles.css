@@ -32,6 +32,7 @@ a, a:link, a:visited {
     min-width: 1em;
     margin-left: 0.5em;
     margin-right: 0.5em;
+    display: flex;
 }
 
 #hello-user-box:hover {
@@ -41,4 +42,10 @@ a, a:link, a:visited {
 #hello-user-box p {
     color: #FFF;
     margin: 0.5em;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
 }

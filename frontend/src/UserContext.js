@@ -17,6 +17,7 @@ export const UserProvider = ({ children }) => {
                 firstName: decoded.firstName,
                 lastName: decoded.lastName,
                 membership: decoded.membership,
+                profilePicture: decoded.profilePicture,
                 admin: decoded.admin,
                 id: decoded._id
             });
@@ -32,7 +33,9 @@ export const UserProvider = ({ children }) => {
             firstName: decoded.firstName,
             lastName: decoded.lastName,
             membership: decoded.membership,
-            admin: decoded.admin
+            profilePicture: decoded.profilePicture,
+            admin: decoded.admin,
+            id: decoded._id
         });
     }
 
