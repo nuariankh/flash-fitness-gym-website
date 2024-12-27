@@ -16,23 +16,23 @@ const SignUp = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        try {
-            const payload = {
-                firstName,
-                lastName,
-                username,
-                email,
-                password,
-                membership,
-                profilePicture: profilePicture ? profilePicture.name : null, // Send just the filename if needed
-            };
 
+        //Create FormData object to handle both form data and file uploads
+        const formData = new FormData();
+        formData.append('firstName', firstName);
+        formData.append('lastName', lastName);
+        formData.append('username', username);
+        formData.append('email', email);
+        formData.append('password', password);
+        formData.append('membership', membership);
+        if (profilePicture) {
+            formData.append('profilePicture', profilePicture); //Attaches file
+        }
+
+        try {
             const response = await fetch(`${process.env.REACT_APP_API_URL}/users/signup`, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body:JSON.stringify(payload),
+                body: formData, //Uses formData instead of JSON
             })
 
             if (response.ok) {

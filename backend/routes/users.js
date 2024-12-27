@@ -6,13 +6,20 @@ const User = require('../models/User');
 const upload = require('../upload');
 
 //sign up user
-router.post('/signup', async (req, res) => {
+router.post('/signup', upload.single('profilePicture'), async (req, res) => {
+    console.log('Request Body:', req.body);  // Check the incoming fields
+    console.log('Uploaded File:', req.file);  // Check the uploaded file
+
+    
     try {
-        const { username, firstName, lastName, password, email, membership, profilePicture, admin } = req.body;
+        const { username, firstName, lastName, password, email, membership, admin } = req.body;
         
         if (!username || !firstName || !lastName || !password) {
             return res.status(400).send({ error: 'All fields are required' });
         }
+
+        const profilePicture = req.file ? req.file.path : null;
+
         const newUser = new User({
             username,
             firstName,
@@ -88,6 +95,12 @@ router.get('/:id', async (req, res) => {
 
 router.get('/:id/profile-picture', async (req, res) => {
     try {
+        const { id } = req.params;
+
+        if (!mongoose.isValidObjectId(id)) {
+            return res.status(400).json({ message: 'Invalid user ID format' })
+        }
+
         const user = await User.findById(req.params.id);
 
         if (!user) {
@@ -108,6 +121,7 @@ router.get('/:id/profile-picture', async (req, res) => {
 
 router.post('/:id/profile-picture', upload.single('profilePicture'), async (req, res) => {
     try {
+        console.log('File: ', req.file);
         const user = await User.findById(req.params.id);
 
         if (!user) {

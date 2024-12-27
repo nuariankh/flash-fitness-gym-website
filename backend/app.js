@@ -15,7 +15,6 @@ const corsOptions = {
     credentials: true,
 }
 
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -48,6 +47,7 @@ router.get('/', (req, res) => {
 
 //Register routes
 app.use('/api', apiRouter);
+app.use('/api/uploads', express.static(path.join(__dirname, 'uploads')));
 
 //START SERVER
 app.listen(port);

@@ -29,12 +29,13 @@ const Header = () => {
         const fetchProfilePicture = async () => {
             if (user && user.id) {
                 try {
-                    const response = await fetch(`http://localhost:8000/api/users/${user.id}/profile-picture`);
+                    const response = await fetch(`${process.env.REACT_APP_API_URL}/users/${user.id}/profile-picture`);
                     const data = response.json();
-                    if (response.ok && data.profilePicure) {
-                        setProfilePicture(data.profilePicture);
+                    if (response.ok && data.profilePicture) {
+                        setProfilePicture(`${process.env.REACT_APP_API_URL}/uploads/${data.profilePicture}`);
+                        console.log('Profile Picture: ', profilePicture);
                     } else {
-                        console.error(data);
+                        console.log(data);
                     }
                 } catch (error) {
                     console.error('Error fetching profile picture: ', error)
@@ -93,7 +94,7 @@ const Header = () => {
                             {user && user.username && user.firstName ? (
                                 <div>
                                     <img 
-                                        src={`${process.env.REACT_APP_API_URL}/users/${user.id}/${user.profilePicture}`}
+                                        src={profilePicture}
                                         alt='User profile picture'
                                         className='profile-picture'
                                     />
